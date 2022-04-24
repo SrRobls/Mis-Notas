@@ -301,3 +301,16 @@ print(superheores_y_Villanos.Buscar('Captain America'))
 # Captain America esta en la lista. Con año de aparicion: 1966
 print(superheores_y_Villanos.Buscar('Rocket Raccoon'))
 # Ese Super Heroe o Villano no esta en la lista
+
+
+'''
+Se cuenta con una lista de Pokémons, de cada uno de estos se sabe su nombre, número y tipo 
+(solo considerar uno el principal), con los cuales deberá resolver las siguientes tareas:
+
+a. mostrar un listado de los Pokémons ordenados por números usando el método de ordenamiento por conteo;
+b. realizar un listado ordenado por nombre utilizando el método de ordenamiento rápido;
+c. mostrar toda la información de pokémon número 640;
+d. listar todos los Pokémons que comienzan con la letra T;
+e. determinar si existe el Pokémon Cobalion y mostrar toda su información;
+f. realizar un listado de todos los Pokémon de tipo eléctrico y calcular cuántos son
+'''
