@@ -1,0 +1,16 @@
+# Ejecicio #40: Escribir un programa que cree un diccionario simulando una cesta de la compra. El programa debe
+# preguntar el artículo y su precio y añadir el par al diccionario, hasta que el usuario decida terminar. Después se
+# debe mostrar por pantalla la lista de la compra y el coste total, con el siguiente formato
+
+articulos = {}
+total = 0
+repet = True
+while repet:
+    key = input('Dame el nombre del articulo: ')
+    articulos[key] = int(input(f'dame el precio del articulo "{key.title()}": '))
+    repet = input('¿Quiere agregrar mas elementos?: ') == 'si' # Aqui comparamos para que si el input proporcionado por el ususario es 'si' estonces repet sigue siendo True, de lo contrario seria False y se detuviese el ciclo
+
+for x in articulos.values():
+    total += x
+
+print(articulos)

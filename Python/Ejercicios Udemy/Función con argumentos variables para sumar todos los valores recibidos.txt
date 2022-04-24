@@ -1,0 +1,21 @@
+#Ejercicio: Crear una función para sumar los valores recibidos de tipo numérico, utilizando argumentos variables *args como parámetro de la función y regresar como resultado la suma de todos los valores pasados como argumentos.
+print('-------------------')
+def sumarNumeros(*numeros):
+	caja = 0
+	for i in numeros:
+		caja += i #caja = caja + i
+	return caja	
+
+resultado = sumarNumeros(2,3,2,5,2,3)
+print(f'resultado: {resultado}')
+
+#Ejercicio: Crear una función para multiplicar los valores recibidos de tipo numérico, utilizando argumentos variables *args como parámetro de la función y regresar como resultado la multiplicación de todos los valores pasados como argumentos.
+def muliplicarNumeros(*args):
+	caja = 1 #Debe iniciar en 1 porque si inicia en 0 se anularian las multiplicaciones
+	for i in args:
+		caja *= i
+	return caja
+
+
+resultado = muliplicarNumeros(2,5,4)
+print(f'resultado: {resultado}')

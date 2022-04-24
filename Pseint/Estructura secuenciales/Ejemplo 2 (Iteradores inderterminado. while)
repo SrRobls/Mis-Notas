@@ -1,0 +1,9 @@
+//Ejemplo: Ciclos con un numero inderterminado de iteraciones
+Proceso ciclos
+	Definir  i  Como Entero;
+	i <- 1;
+	mientras i <= 10 Hacer
+		Escribir i;
+		i <- i + 1;
+	FinMientras
+FinProceso

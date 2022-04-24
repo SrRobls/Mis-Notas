@@ -1,0 +1,9 @@
+def desendenciaNumeros(x):
+	if x == 1:
+		print(1)
+	else:
+		print(x)
+		desendenciaNumeros(x - 1) #aqui nuestra funcio recursiva. que se ejecutara hasta que x = 1
+
+num = int(input('Dame un numero: '))
+desendenciaNumeros(num)

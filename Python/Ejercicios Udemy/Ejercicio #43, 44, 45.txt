@@ -1,0 +1,21 @@
+# Ejecicio #43: Escribir una función que muestre por pantalla el saludo ¡Hola amiga! cada vez que se la invoque.
+def funcion():
+    print('¡Hola Amiga!')
+funcion()
+funcion()
+# Ejercicio #44: Escribir una función a la que se le pase una cadena <nombre> y muestre por pantalla el saludo ¡hola
+# <nombre>!.
+
+def saludo (name):
+    print(f'Hola {name}, deseo que logres todas tus metas')
+
+saludo('Johan Robles')
+
+# Ejercicio #45: Escribir una función que reciba un número entero positivo y devuelva su factorial.
+def factorial(x):
+    if x == 1:
+        return 1
+    else:
+        return x * factorial(x-1)
+
+print(factorial(5))

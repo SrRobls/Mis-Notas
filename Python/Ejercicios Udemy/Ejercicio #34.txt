@@ -1,0 +1,15 @@
+# Ejecicio #34: Escribir un programa que guarde en una variable el diccionario {'Euro':'€', 'Dollar':'$', 'Yen':'¥'},
+# pregunte al usuario por una divisa y muestre su símbolo o un mensaje de aviso si la divisa no está en el diccionario.
+divisas = {
+    'Euro': '€',
+    'Dollar': '$',
+    'Yen': '¥'
+}
+divisaUser = input('Give a badge: ')
+# recordar que para verificar si un elementos esta en nuestro diccionario, usamos: 'key' in 'dicionario'
+# Nos saldar True or False dependiendo del caso
+if divisaUser in divisas: #si (key que nos da nuestro usuario) esta en (diccionario divisas) hacer:
+    print(divisas[divisaUser])
+    print(f'{divisaUser} si esta en el diccionario divisas')
+else:
+    print(f'{divisaUser} no esta en nuestro diccionario divisas')

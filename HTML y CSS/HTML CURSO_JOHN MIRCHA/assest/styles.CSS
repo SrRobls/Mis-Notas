@@ -1,0 +1,24 @@
+html{
+    scroll-behavior: smooth;
+}
+
+/* Le daremos estilos a todos los elementos h1 */
+h1{
+    /* modificamos el color */
+    color: blueviolet; 
+}
+
+
+
+/* Le daremos estilo a todos las imagenes */
+img{
+    /* usamos max width para que  que las imagenes usen el tamaño maximo de la pantlla*/
+    max-width: 100%;
+    /* Usamos height: auto para que la imagen se redimesione segun los pixeles que pueda 'agarrar' */
+    height: auto; 
+
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}

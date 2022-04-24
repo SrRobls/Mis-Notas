@@ -1,0 +1,41 @@
+# Ejecicio #32: Escribir un programa que almacene las matrices
+# A = ((1, 2, 3)(4, 5, 6))      B = ((-1, 0),(0, 1),(1, 1))
+# en una lista y muestre por pantalla su producto.
+# Nota: Para representar matrices mediante listas usar listas anidadas, representando cada vector fila en una lista.
+
+#Una lista anidada es una lista de 2 dimensiones:
+listA = [
+   # 0  1  2
+    [1, 2, 3], #0
+    [4, 5, 6]  #1
+]
+listB = [
+    # 0  1
+    [1, 2], #0
+    [3, 4],  #1
+    [5, 6]   #2
+]
+resultado = [
+    #0  1
+    [0, 0], #0
+    [0, 0]  #1
+]
+#i toma las cantidad de filas de ListaA
+for i in range(len(listA)):
+    p = True #Nos servira como directorio para los componentes de 'resultado'
+    caja1 = 0 #En caja 1 y caja 2 se guardara cada componenete de resultado
+    caja2 = 0
+    for j in listA: #accedemos a los componentes de listA
+       componente = 0 #donde se guardara los compoenetes de resultado, que posteriormente se pasaran a caja1 y caja2
+       l = 0 #nos serivira para que j, que accedera a cada lista de listA, acceda a cada uno de los elementos de esas listas
+       for k in listB: #K accedera a cada lista de listB
+           componente += (j[l] * k[i]) #se multplica el elemento de la listA en la que esta j[l] con los elemento de listB en la que este k[i]
+           l += 1 #Aumentamos para que j vaya cambiando de elementos de la lista dentro de listA
+       if p == True:
+           caja1 = componente
+           p = False
+       else:
+           caja2 = componente
+       resultado[i] = [caja1, caja2] #remplazamos la lista i de resultado por la nueva que tendra los componeste de la multiploicacion de las matrices
+print(resultado)
+#este ejercicio me costo 6 horas hacerlo, ademas esta no es la mejor forma de hacerlo

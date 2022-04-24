@@ -1,0 +1,7 @@
+
+/* Para colocar el color del borde, el estilo del borde y centrar el texto. */
+h1 {
+    border-color: black;
+    border-style: solid;
+    text-align: center;
+}

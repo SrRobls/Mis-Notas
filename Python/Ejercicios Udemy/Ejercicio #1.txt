@@ -1,0 +1,9 @@
+#Imprimir la palabra python alrevez
+var = 'Python'
+largo = len(var)
+for i in range(largo):
+    if i == 0:
+        continue #Para pasar a la siguiente iteracion del bucle
+    print(var[-i])
+else:
+    print(var[0])

@@ -1,0 +1,14 @@
+# Ejecicio #28: Escribir un programa que pida al usuario una palabra y muestre por pantalla si es un palíndromo
+word = input('give me a word: ')
+reverseWord = ''
+print(len(word))
+for i in range(len(word) - 1, -1, -1): 
+    print(word[i])
+    reverseWord += word[i] #reverseWord = reverseWord + wrod[i]
+
+if reverseWord == word:
+    print(f'reverseWord: {reverseWord} == word: {word}')
+    print('is palindromo')
+else:
+    print(f'reverseWord: {reverseWord} != word: {word}')
+    print('Not is palindromo')

@@ -1,0 +1,32 @@
+# Ejercicio #10: Los alumnos de un curso se han dividido en dos grupos A y B de acuerdo al sexo y el nombre. El grupo
+# A esta formado por las mujeres con un nombre anterior a la D y los hombres con un nombre posterior entre E y H. el
+# grupo B por el resto. Escribir un programa que pregunte al usuario su nombre y sexo, y muestre por pantalla el
+# grupo que le corresponde.
+
+nombre = input('Dame tu nombre: ')#esta variables recibe una cadena, recordemos que las cadenas son listas
+sexo = input('Que sexo eres: ')
+if sexo.lower() == 'mujer' or sexo.lower() == 'femenino': #Usamos .lower para asegurarnos que la comparacion se efectue correctamente sin tener en cuenta las mayusculas y minisculas
+    if nombre[0].lower() == 'd' or nombre[0].lower() == 'c' or nombre[0].lower() == 'b' or nombre[0].lower() == 'a':
+        print('Pertenece al Grupo A')
+    else:
+        print('Pertenece al Grupo B')
+elif sexo.lower() == 'hombre' or sexo.lower() == 'masculino':
+    if nombre[0].lower() == 'e' or nombre[0].lower() == 'f' or nombre[0].lower() == 'g' or nombre[0].lower() == 'h':
+        print('Pertenece al Grupo A')
+    else:
+        print('Pertenece al Grupo B')
+else:
+    print('Error al introducir dato: ')
+#Otra forma seria:
+if sexo.lower() == 'mujer' or sexo.lower() == 'femenino':
+    if nombre[0].lower() <= 'd': #lo comparamos con <= 'd'. esto significa que se cumple la condicion si la primera letra de la cadena nombre es igual a d o alguna letra antes del d (a,b,c)
+        print('Pertenece al Grupo A')
+    else:
+        print('Pertenece al Grupo B')
+elif sexo.lower() == 'hombre'or sexo.lower() == 'masculino':
+    if nombre[0].lower() >= 'e' and nombre[0].lower() <= 'h':  #letras comprendidas entre e y h (e,f,g,h)
+        print('Pertenece al Grupo A')
+    else:
+        print('Pertenece al Grupo B')
+else:
+    print('Error al introducir dato: ')

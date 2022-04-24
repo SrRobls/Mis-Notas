@@ -1,0 +1,13 @@
+#Ejercicio dada la siguiente tupla: crear una lista que solo incluya los numero menores que 5 utilizando:
+# tupla = (13,1,8,3,2,5)
+ nums = (13,1,8,3,2,5)
+listaNums = list(nums)
+j = 0
+for i in listaNums:
+	while listaNums[j] >= 5:
+		listaNums[j] = int(input(f'Dame un valor menor a 5 para el indice #{j+1}: '))
+	else:
+		j += 1
+else:
+	nums = tuple(listaNums)
+	print(f'La tupla ahora tiene los siguientes valores: {nums}')

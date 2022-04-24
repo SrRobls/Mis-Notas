@@ -1,0 +1,13 @@
+# Ejercicio #6: Escribir un programa que pregunte el correo electrónico del usuario en la consola y muestre por
+# pantalla otro correo electrónico con el mismo nombre (la parte delante de la arroba @) pero con dominio ceu.es.
+
+email = input('Dame tu email: ')
+email = email[0:email.find('@')] + '@ceu.es'
+print(email)
+#usamos la funcion.find para encontrar la posicion del caracter '@'
+print(email.find('@'))
+# y luegos usamos email[0:email.find('@')] para que se tomara de la cadena origunal todos los caracteres hasta el @.
+# posteriormente le sumamos a esa parte de la cadena los siguiente: 'ceu.es'
+
+numbers = [2, 4, 5] #Nota .find SOLO sirve para cadena de caracteres
+print(numbers.find(5))

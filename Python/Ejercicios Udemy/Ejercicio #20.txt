@@ -1,0 +1,12 @@
+# Ejercicio #20: Escribir un programa en el que se pregunte al usuario por una frase y una letra, y muestre por
+# pantalla el número de veces que aparece la letra en la frase.
+frase = input('Dame una frase: ')
+letra = input('Ahora dame una letra: ')
+numeroLetra = 0
+for i in frase:
+    if i == letra:
+        numeroLetra += 1
+    else:
+        continue
+else: 
+    print(f'La letra [{letra}] sale en la frase [{frase}] {numeroLetra} veces')

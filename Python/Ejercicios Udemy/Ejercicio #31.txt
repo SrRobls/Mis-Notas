@@ -1,0 +1,11 @@
+# Ejecicio #31: Escribir un programa que almacene los vectores (1,2,3) y (-1,0,2) en dos listas y muestre por
+# pantalla su producto escalar.
+
+vertor1 = [1,2,3]
+vertor2 = [-1,0,2]
+#Sabemos que las dimensiones de los vectores es en R3
+dimension = 3 #[0,1,2]
+productoEscalar = 0
+for i in range(dimension):
+    productoEscalar += (vertor1[i]) * vertor2[i]
+print(f'el Porducto escalar es: {productoEscalar}')

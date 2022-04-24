@@ -1,0 +1,9 @@
+# Ejercicio #5: Escribir un programa que pida al usuario que introduzca una frase en la consola y una vocal,
+# y después muestre por pantalla la misma frase pero con la vocal introducida en mayúscula
+
+frase = input('Dame una frase: ')
+vocal = input('Ahora dame una vocal: ')
+
+frase = frase.replace(vocal, vocal.upper())  #Usamos la funcion.replace para remplazar un cadena o caracter por otro ('caracter que queremos cambiar', 'caracter nuevo'). nota:
+# esto solo funciona para cadenas de caracteres. tambien usamos la funcion.upper para convertir la vocal a mayusculas
+print(frase)

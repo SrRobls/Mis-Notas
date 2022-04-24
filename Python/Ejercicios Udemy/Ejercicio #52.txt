@@ -1,0 +1,11 @@
+# Ejercicio #52 Escribir una función que reciba una muestra de números en una lista y devuelva su media.
+def media(args) #args recinir argumos como si fuera un tubla
+    suma = 0
+    for i in args #recorrems los componentes de args
+        suma += i
+    return sumalen(args)
+print(media(2,3,4,3,4)) #le pasamos esto argumos a la tuplaparametro args
+# otra forma es
+def promedio(lista) #lista la usamos como una array, no es necesario las [], basicamentes es un parametro que lo interprtamos como queramos, en este caso como un arreglo
+    return sum(lista)len(lista) #La funcion sum se usa para sumar todos los componentes de un arreglo o caden de texto
+print(promedio([1,2,3,4,5]))

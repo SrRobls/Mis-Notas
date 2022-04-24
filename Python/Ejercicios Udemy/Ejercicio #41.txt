@@ -1,0 +1,17 @@
+# Ejecicio #41 Escribir un programa que cree un diccionario de traducción español-inglés. El usuario introducirá las
+# palabras en español e inglés separadas por dos puntos, y cada par palabratraducción separados por comas. El
+# programa debe crear un diccionario con las palabras y sus traducciones. Después pedirá una frase en español y
+# utilizará el diccionario para traducirla palabra a palabra. Si una palabra no está en el diccionario debe dejarla
+# sin traducir.
+
+espanol_ingles = {}
+word = input('Dame las palabras en español y su traduccion al ingles separadas por una coma y en formato españolingles ')
+for traduccion in word.split(',')
+    espanol_ingles[traduccion.split('')[0]] = traduccion.split('')[1]
+
+frase = input('Dame una frase en español ')
+for i in frase.split()
+    if i in espanol_ingles
+        print(espanol_ingles[i], end=' ')
+    else
+        print(i, end=' ')

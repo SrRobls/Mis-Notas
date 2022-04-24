@@ -1,0 +1,8 @@
+# Ejercicio #54: Escribir una función que reciba una muestra de números en una lista y devuelva un diccionario con su
+# media, varianza y desviación típica.
+def nums(x):
+    dict = {}
+    dict['Media'] = sum(x)/len(x)
+    dict['Desviacion Tipica'] = (((sum(x)**2)/len(x))-(dict['Media'])**2)**(1/2)
+    return dict
+print(nums([12, 6, 7, 3, 15, 10, 18, 5]))

@@ -1,0 +1,38 @@
+# Ejecicio #29: Escribir un programa que pida al usuario una palabra y muestre por pantalla el número de veces que
+# contiene cada vocal.
+numbersA = 0
+numbersE = 0
+numbersI = 0
+numbersO = 0
+numbersU = 0
+word = input('give a word: ')
+word = word.lower()
+for i in word:
+    if i == 'a':
+        numbersA += 1
+    elif i == 'e':
+        numbersE += 1
+    elif i == 'i':
+        numbersI += 1
+    elif i == 'o':
+        numbersO += 1
+    elif i == 'u':
+        numbersU += 1
+
+print(f'''
+provided word: {word}
+there is {numbersA} A's in {word}
+there is {numbersE} E's in {word}
+there is {numbersI} I's in {word}
+there is {numbersO} O's in {word}
+there is {numbersU} U's in {word}
+''')
+
+#otra forma:
+vocals = ['a', 'e', 'i', 'o', 'u']
+for vocal in vocals: #vocal sera igual a una vocal de la lista vocals
+    times = 0 #Para contdor de cuantas veces aparece una vocal
+    for letter in word: #letter recorrera cada letra de la variable word
+        if vocal == letter: #si la letter es igual a la vocal el contador de esta vocal aumenta
+            times += 1
+    print(f'The letter {vocal} is {times} times') #cantidad de veces que aparece una letra en la caden word

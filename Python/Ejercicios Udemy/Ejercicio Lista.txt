@@ -1,0 +1,17 @@
+#Ejercicio: Pedir 5 numeros al usuario e imprimir solo los que son divisibles por 3
+numeros = []
+num = 0
+i = 1
+while i <= 5:
+	num = int(input(f'Dame el numero a agregar #{i}: '))
+	numeros.append(num)
+	i += 1
+else:
+	print('Fin de recoleccion')
+	i = 0
+
+for i in numeros:
+	if i % 3 == 0:
+		print(f'El numero {i} es multiplo de 3')
+else:
+	print('Final')

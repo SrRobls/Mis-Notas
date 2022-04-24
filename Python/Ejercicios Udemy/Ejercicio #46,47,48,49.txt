@@ -1,0 +1,38 @@
+#Ejercicio #46: Construir una función recursiva que calcule la suma de los n primeros números
+# naturales.
+def sumatoria(num):
+    if num == 1:
+        return 1
+    else:
+        return num + sumatoria(num-1) #se vuelve a llmar al funcion si num != 1
+
+numero = int(input('Dame un numero: '))
+print(sumatoria(numero))
+
+#Ejercicion #47: Construir una función recursiva que imprima la lista de números naturales
+# comprendidos entre dos valores a y d dados por el usuario.
+
+def imprimir(limInf, limSupm):
+    if limInf == limSupm:
+        print(limInf) #hacemos estos print para que nos imprimira en pantalla un numero comprendio entre a y d, ya que si no lo hacemos solo se imprimiria el ultimo numero (d)
+        return limSupm
+    else:
+        print(limInf)
+        return imprimir(limInf + 1, limSupm)
+imprimir(4,7)
+#Ejercicio #48: Escribir una funcion recursiva que devuelva la cantidad de digitos de un nuvero entero:
+def digitos(numeroStr, digito):
+    if digito == len(numeroStr):
+        return digito
+    else:
+        return digitos(numeroStr, digito + 1)
+numero = int(input('Dame un numero: '))
+print(digitos(str(numero), 0))
+# Ejercicio #49: Escribir una función recursiva que calcule x^y mediante multiplicaciones sucesivas, siendo x e y dos
+# números enteros.
+def multiplicacion(x,y):
+    if y == 1:
+        return x
+    else:
+        return x*multiplicacion(x,y-1)
+print(multiplicacion(5,3))    

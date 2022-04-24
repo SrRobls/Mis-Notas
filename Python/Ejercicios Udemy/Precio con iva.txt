@@ -1,0 +1,7 @@
+#Ejercicio: Crear una función para calcular el total de un pago incluyendo un impuesto aplicado.
+def precioConIva(precio,iva):
+	costoDeIva = (precio * iva) / 100
+	return precio + costoDeIva
+valor = float(input('Dame el precio del producto a comprar: '))
+valorIva = int(input('Dame el valor del iva: '))
+print(f'El valor original es {valor} valor a pagar es  {precioConIva(valor,valorIva)} $  que tiene un iva de {valorIva}%')

@@ -1,0 +1,513 @@
+<!-- estos es un comentario, podemos generar un comemtario
+automaticamete, con Ctrl + } -->
+
+<!--
+    Comenzamos a llamar nuestra estructura HTML (HTML5)
+-->
+<!DOCTYPE html>
+<html lang="es-COL"> <!--Esta etiqueta es la que contendra toda nuestra
+                   estructura HTML, el atributo leng, es basicamente
+                    el idioma que tendra el documento-->
+
+<!--
+    esto es el encabezado del html, aqui va algunos atributos y
+    etiquetas para posicionar la pagina etc...
+-->
+<head>
+    <meta charset="UTF-8"> <!--el atributo charset es para definir el juego de caracteres para la pagina, y 'UTF-8',  es el juego de caracteres universal-->
+
+    <!--En esta meta etiqueta podemos ver que hay dos atributos (name='viewport y content='...', que sirven para 'decirle' a los dipositivos que abren 
+      la pagina el como se va adaptar el contenido)-->
+    <meta name="viewport" content="width=device-width, initial-scale=4.0">
+
+    <title>Aprendiendo HTML</title> <!--Para colocarle un titulo a la pagina-->
+
+    <!--Ahora usamos una meta etiqueta con los atrbitos name='description' y content='...', basicamente le estamos diciendo a nuestro navegador 
+      que cuando un usario busque nuestra pagina, este muestre la descripcion que nostros le ponemos (lo que esta en content)-->
+    <meta name='description' content="En esta pagina va mis notas sobre HTML"> 
+    <link rel="stylesheet" href="assest/styles.CSS"> <!--link lo usamos para llamar un archivo, rel sirve para espeificar el tipo de documenro llamado y href para indicar el lugar donde esta ubicado el archivo (en nuestro caso, un archivo CSS)-->
+    <link rel="canonical" href="htpp://tu-dominio.com/la-url-canonica"> <!-- Para especificar la url canon de mi pagina -->
+    <link rel="icon" href="media/descarga.jpg"> <!-- para colocar un icono a la pagina cuando se abre desde el computador -->
+    <link rel="apple-touch-icon" href="media/descarga.jpg"> <!-- para colocar un icono a la pagina cuando se abre desde el celular -->
+    <meta name="theme-color" content="#FF6600"> <!-- Para colocarle un color a la barra de busqueda en nuestros dispositivos celulares, solo funciona en celular --> 
+
+    <meta property="og:title" content="Aprendiendo HTML">
+    <meta property="og:description" content="En esta pagina va mis notas sobre HTML">
+    <meta property="og:image" content="https://tudominio.com/img/periodic-table-of-html-elements.png">
+    <meta property="og:url" content="https://tudominio.com/index.html">
+    <style>
+        h2{
+            color: red;
+        }
+    </style>
+</head>
+
+<!--
+    En body, como su nombre lo indica, es el cuerpo del HTML.
+    Es donde ira la informacion que vera el usuario
+-->
+
+<body>
+  <h2 id='temario'>Temarios</h2>
+  <ul>
+    <li><a href="index.html#encabezado">Encabezados</a></li>
+    <li><a href="index.html#etiquetas_de_texto">Etiquetas de Texto</a></li>
+    <li><a href="index.html#etiquetas_de_formateo">Etiquetas de formateo</a></li>
+    <li><a href="index.html#ESE">Etiquetas semanticas Estructurales</a></li>
+    <li><a href="index.html#EB_VS_EL">Etiquetas de bloque vs Etiquetas de linea</a></li>
+    <li><a href="index.html#imagenes">Imagenes en HTML</a></li>
+    <li><a href="index.html#ELO">Etiqueta de Lista Ordenada</a></li>
+    <li><a href="index.html#ELD">Etiquetas de Lista Desordenadas</a></li>
+    <li><a href="index.html#tablas">Tablas</a></li>
+    <li><a href="index.html#enlaces">Algunos Elementos Interactivos</a></li>
+    <li><a href="index.html#VD">Videos Y audios</a></li>
+    <li><a href="index.html#formulario">Formularios</a></li>
+    <li><a href="index.html#data-aytributes">Data Atributes</a></li>
+  </ul>
+  <hr>
+    <h2 id="encabezado">Encabezados:</h2>
+    <p>Para acceder a la documentacion de HTML, CSS y Javacript dale click a <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">aqui</a><br> 
+        O si lo quieres de manera mas simplificada dale <a href="https://htmlreference.io/" target="_blank">aqui</a></p>
+    <!--Usamos la estiqueta p para imprimir un parrarfo-->
+    <P>Hola Mundo!</P>
+    <h1>Encabezado de nivel 1</h1>
+    <h2>Encabezado de nivel 2</h2>
+    <h3>Encabezado de nivel 3</h3>
+    <h4>Encabezado de nivel 4</h4>
+    <!--esto es para colocar un 'titulo/s' a nuestra pagina. tambien estan los h5, y h6. tener en cuenta que es importante que en nuestra pagina solo haya un h1, ya que esto nos ayuda a nuestro posisonaminto en la busquedad-->
+    <a href="index.html#temario">⏫</a>
+    <hr>
+
+    <h2 id='etiquetas_de_texto'>Etiquetas de texto:</h2>
+    <p>Algunas etiqueta de texto basico son:</p><br>
+    <b>Hola Mundo!</b><br>
+    <i>Toy aprendiendo!</i><br>
+    <u>Me gusta el quesillo</u>
+    <p>E= mc<sup>2</sup></p>
+    <p>H<sub>2</sub>O</p>
+    <mark>Voy a ser el mejor!</mark>
+    <small>Y de todos los tiempos!</small><br>
+    <!--Si queremos denotar algo importante o enfacis, usamos:-->
+    <strong>Este texto es importante</strong> <em>Este texto hace enfacis</em>
+    <!--he define saltos semanticos. como para pasar a otro contenido-->
+    <a href="index.html#temario">⏫</a>
+    <hr>
+    <h2 id='etiquetas_de_formateo'>Etiquetas de formateo</h2>
+    <p>
+        <!-- Usamos la etiqueta pre para que HTML tenga en cuenta nuestro saltos de linea y tabulaciones si necesidad de un br. notemos que la letra es diferente que en un p-->
+        <pre>
+            <strong>Cosas de Desarrolo de Software que aprendrendere este año: </strong>
+            - Python
+              - Fundemantos de Programacion
+              - Programacion Orientada a Objetos
+            - Desarrollo Web
+              - HTML, CSS (Responsive Web Designe)
+              - Flask, Django (Para el Backend)
+              - Javacript (Algunas cosas como lo basico y algunas librerias como React y Node.js)
+            - Base de Datos
+              - PostgreSQL
+        </pre>
+        <!--Si querenmos escribir un codigo en HTML usamos la etiqueta Code, notemos tambien que la letra es diferente que en un p-->
+        <code>Estos es un Codigo</code>
+    </p>
+    <a href="index.html#temario">⏫</a>
+    <hr>
+    <!-- Es vasicamente el como estara estructurada la paginia. tener en cuenta que la estructura semantica debe ser de acuerdo al como se quiere mostrar la informacion, es decir, no es estricto -->
+    <h2 id='ESE'>Etiquetas semanticas Estructurales</h2>
+    <div>div-Etiqueta contenedora que no tiene semantica</div>
+    <header>header-Cabecera de un sitio web o seccion web</header>
+    <main>
+        main-Define la seccion principal de un documento solo debe
+        existir una etiqueta main por documento (como tambien un h1)
+    </main>
+    <footer>footer-Pie de pagina de un sitio web o seccion web</footer>
+    <aside>aside-Representa contenido complementario o segundario</aside>
+    <section>section- Representauna s eccionde contenido generico</section>
+    <address>address- Representa una direccion fisica</address>
+    <a href="index.html#temario">⏫</a>
+    <hr>
+    <h2 id='EB_VS_EL'>Etiquetas de bloque vs Etiquetas de linea</h2>
+    <div style="background-color: blue;">La etiqueta de bloque por excelencia es div.
+        Una etiqueta de bloque es aquella en la que sus saltos de linea se hacen con su etiquetas hermanas
+        (Ocupan todo el lugara de la seccion donde estan escritas)
+    </div>
+    <div>Otra etiqueta div. notar que hay una tabulacion</div>
+    <span style="background-color: red;">La etiqueta de linea por excelencia es span.
+        los saltos de lienas NO se hacen mediante sus etiquetas hermanas
+        (solo ocupa el espacio necesario que necesita)
+    </span>
+    <span>Otra etiqueta de linea. notar que NO hay tabulacion</span>
+    <a href="index.html#temario">⏫</a>
+    <hr>
+    <h2 id='imagenes'>Imagenes en HTML</h2>
+    <!-- Para colocar imagenes en HTML usamos la etiqueta img, con dos atributos, el src y el alt.
+        el primero para especificar la direccion de la imagen y el segundo para describir la imagen.
+        posteriormente, tambien usamos codigo CSS para redimensionar las imagenes (ver styles.css) -->
+    <img src="periodic table HTML tags.png" alt="Tabla periodica de las etiquetas HTML">
+    <a href="index.html#temario">⏫</a>
+    <hr>
+    <h2 id='ELO'>Etiqueta de Lista Ordenada</h2>
+    <!-- Para una lista ordenada usamos la etiqueta ol -->
+    <h3>Mis comidas favoritas!</h3>
+    <ol>
+        <!-- para colocar un elementos dentro de la lista ordead, usamos li -->
+        <li>Arroz con Pollo</li>
+        <li>Quesillo</li>
+        <li>Sopa de Lentejas</li>
+        <li>Perro Caliente</li>
+    </ol>
+        <!-- Podemos colocar desde que numero empieza la lista ordenada con un atributo -->
+    <ol start="8">
+        <li>Arroz con Pollo</li>
+        <li>Quesillo</li>
+        <li>Sopa de Lentejas</li>
+        <li>Perro Caliente</li>
+    </ol>
+    <!-- Tambien podemos decirle a la lista que los ordene de manera inversa -->
+    <ol reversed>
+        <li>Arroz con Pollo</li>
+        <li>Quesillo</li>
+        <li>Sopa de Lentejas</li>
+        <li>Perro Caliente</li>
+    </ol>
+    <!-- Por ultimo, tambie podemos escoger el tipo de numeracion que queremos
+        1 para nuemros, A parta letras en mayusculas, a para letras en minusculas y I para numeros  romanos -->
+        <ol type="I">
+            <li>Arroz con Pollo</li>
+            <li>Quesillo</li>
+            <li>Sopa de Lentejas</li>
+            <li>Perro Caliente</li>
+        </ol>
+        <a href="index.html#temario">⏫</a>
+    <hr>
+    <h2 id='ELD'>Etiquetas de Lista Desordenadas</h2>
+    <h3>Como soy fisicamente:</h3>
+    <!-- la etiqueta de una lista desordenada es ul -->
+    <ul>
+        <li>Alto</li>
+        <li>Piel morena</li>
+        <li>Estructura medio-gruesa</li>
+    </ul>
+    <!-- Tambien podemos escoger la forma de la viñeta de la lista, siendo circle para un circulo
+        square para un cuadrado -->
+    <ul type='circle'>
+        <li>Alto</li>
+        <li>Piel morena</li>
+        <li>Estructura medio-gruesa</li>
+    </ul>
+    <ul type='square'>
+        <li>Alto</li>
+        <li>Piel morena</li>
+        <li>Estructura medio-gruesa</li>
+    </ul>
+    <a href="index.html#temario">⏫</a>
+    <hr>
+    <h2 id="tablas">Tablas</h2>
+  <table>
+    <tr>
+      <td>Nombre</td>
+      <td>Constelación</td>
+      <td>Tipo</td>
+    </tr>
+    <tr>
+      <td>Ikki</td>
+      <td>Fénix</td>
+      <td>Bronce</td>
+    </tr>
+    <tr>
+      <td>Shaina</td>
+      <td>Ofiuco</td>
+      <td>Plata</td>
+    </tr>
+    <tr>
+      <td>Saga</td>
+      <td>Géminis</td>
+      <td>Dorado</td>
+    </tr>
+  </table>
+  <br><br><br>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">Tabla de los Santos de Athena</th>
+      </tr>
+      <tr>
+        <th>Nombre</th>
+        <th>Constelación</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ikki</td>
+        <td>Fénix</td>
+        <td>Bronce</td>
+      </tr>
+      <tr>
+        <td>Mistry</td>
+        <td>Lagarto</td>
+        <td>Plata</td>
+      </tr>
+      <tr>
+        <td>Saga</td>
+        <td>Géminis</td>
+        <td>Dorado</td>
+      </tr>
+      <tr>
+        <td>Shaina</td>
+        <td rowspan="2">Ofiuco</td>
+        <td>Plata</td>
+      </tr>
+      <tr>
+        <td>Odiseo</td>
+        <td>Dorado</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="3"><small>Saint Seiya fue creado por Masami Kurumada</small></th>
+      </tr>
+    </tfoot>
+  </table>
+  <a href="index.html#temario">⏫</a>
+  <hr>
+  <h2 id='enlaces'> Algunos Elementos Interactivos!</h2>
+  <!-- Para crear un boton que abra un evento cuando le demos click usamos -->
+  <button onclick="alert('pai esto es un evento')">Presiona el boton</button><br>
+  <!-- si queremos meter informacio y que se muestre desplegado usamos -->
+  <!-- Usamos el atributo open para que este inicialmente desplegado -->
+  <details open>
+    <summary>Acordeon</summary>
+    <article>
+      <p>Esto es como un acordeon de informacion Xd</p>
+    </article>
+    <article>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt laborum perspiciatis, nesciunt ullam esse voluptatem deleniti facilis magni quas quidem ad ab consectetur excepturi magnam iusto culpa? Impedit, laborum quos.</p>
+    </article>
+  </details>
+  <details>
+    <summary>Tabla</summary>
+    <article>
+      <img src="periodic table HTML tags.png" alt="tabla">
+    </article>
+  </details>
+  <a href="index.html#temario">⏫</a>
+  <hr>
+  <h2 id='VD'>Videos Y audios</h2>
+  <!-- Usamos el atributo controls para que podamos reproducir el audio y el vide -->
+  <!-- Y tambien usamos preload para que el audio y el video se vayan cargando en el cache del ususario y asi evitar prblemas por internte lento o cosas asi -->
+  <audio src="media/My Ordinary LifeThe Living Tombstone.mp3" controls preload></audio>
+<!-- Usamos poster para que  antes de reproducir el video (que no se porque no me cargar Xd) muestre una imagen-->
+  <video src="media/yt5s.com-NO Xokas NO (PARODIA) #elxokas-(144p).mp4" controls preload poster="periodic table HTML tags.png"></video>
+  <a href="index.html#temario">⏫</a>
+  <hr>
+  <h2 id="formulario"></h2>
+  <h2>Elementos de Formularios</h2>
+  <!-- De tipo texto, con un atributo placeholder para indicar al ususario algo -->
+  <input type="text" placeholder="Escirbe algo">
+  <br>
+  <!-- Para crear u n boton, si o si debemos colocarle un valor de value para que se muestre -->
+  <input type="button"  value="Esto es un boton">
+  <!-- Checkbox, para crear u n boton, si o si debemos colocarle un valor de value para que se muestre -->
+  <br>
+  <input type="checkbox">
+  <br>
+  <!-- Para sleccionar casillas -->
+  <input type="radio">
+  <br>
+  <!-- De tipo decha -->
+  <input type="date">
+  <br>
+  <!-- para saleccionar un color -->
+  <input type="color">
+  <br>
+  <!-- Este nos ayuda a limpiar los datos introducidos anteriormente -->
+  <input type="reset">
+  <br>
+  <!-- Para sellecionar y cargar un archivo en el formulario -->
+  <input type="file">
+  <br>
+  <!-- Para sellecionar y cargar uno o varios archivos a la vez en el formulario -->
+  <input type="file" multiple>
+  <br>
+  <!-- Para pedirle al usuario un email que cumpla con los requisitos de email (dominio, @, extension, etc) -->
+  <input type="email">
+  <br>
+  <!-- Para relleanr unicamente de numeros -->
+  <input type="number">
+  <br>
+  <!-- Para colocar nuestro numero telefonico -->
+  <input type="tel">
+  <br>
+  <input type="password">
+  <br>
+  <input type="search">
+  <br>
+  <!-- Para crear un campo de comentario -->
+  <!-- Col y Rows son para el largo y el ancho -->
+  <textarea name="" id="" cols="30" rows="10">Esto es un campo de comentario</textarea>
+  <br>
+  <!-- Para generar un seleccionador -->
+  <select name="" id="">
+    <option value="">JAVASCRIPT</option>
+    <option value="">PYTHON</option>
+    <option value="">C++</option>
+  </select>
+  <br>
+
+  <!-- Este es bastante importante y es para enviar informacion con base a los datos que proporciono el usuario
+      aqui no hace nada porque falta algunas cosas y no esta denro de un formulario -->
+  <input type="submit">
+  <br>
+  <input type="text" value="No me puedes cambiar Xd" readonly disabled>
+  <br>
+  <h3>Ejemplos de Formularios</h3>
+  <h4>Formulario de Login</h4>
+  <!-- Para crear un formulario usmoa la etiqueta form con el atributo action
+    action es el valor/direccion donde ira la informacion del formulario -->
+    <!--Y el atributo method='Get' es el predeterminado de todos los formularios para enviar datos hacia la direecion.
+    Como es predeterminado no es necesario colocarlo-->
+    <h5>Usando el metodo GET</h5>
+    <form action="https://www.jonmircha.com/" method="get">
+    <!-- El atributo name es basicamente como si estuviesemos creando una variable donde se almacenara del dato del input -->
+      <input type="text" placeholder="Usuario" name="user" required>
+      <br>
+      <input type="password" placeholder="Contraseña" name="password" required>
+      <!-- al usar required (que es un aytributo booleano) podemos obliga r al usuario para que antes de darle enviar si o si introduzca datos a los elemtos de formlario -->
+      <br>
+      <input type="submit">
+      <br>
+      <!-- Cuando le damos a enviar, vemnos que nos manda a la direccion del action. por ejemplo si nuestro usuario es ElPepe y la contraseñla es 123,
+      entonces nos manda a esta direccion https://www.jonmircha.com/?Usuario=Elpepe&contrase%C3%B1a=123. Notar que estamos enviando los valores de las variables.
+      Notar tambien que en la dirrecion lo que esta despues del '?'son las variabvles que estamos pasando  -->
+      <input type="reset">
+      <!-- Al darle en restablecer venos como limpia el valor que le estababamos dando al formulario -->
+      <br>
+    </form>
+    <h5>Pero usando el metodo POST</h5>
+    <!-- Perso si usamos el method="post" la forma de enciar las variables es diferente, ahora se manda de forma 'oculta'-->
+    <form action="https://www.jonmircha.com/" method="post">
+      <!-- Con el atributo atocomplete='OFF' podemos deshabilitar la accion de autocompletar en nuestro de formulario, pero si queremos aplicarselos a todos lo elemento de formulario, solo basta con colocar este atributo en la etiqueta del formulario. por defecto siempre viene en on-->
+      <!-- Tambien si queremos indicar al usuario que tipo de elento queremos de el, entonces usamos label -->
+        <label for="para_el_usuario">Dame tu Usuario:</label>
+        <input type="text" placeholder="Usuario" id="para_el_usuario" name="user" autocomplete="off" pattern="^[A-Za-z]+$" title="Solo se permiten letras" required>
+        <!-- Si queremos que un elemeto de formulario SOLO tenga un tipo de caracter usamos a pattern con una expresion regular (Una expresion regular se crea ^[Tipo de caracteres permitidos]+$) 
+          notar que estamos pidiendo solo caracteres que sean letras, ya sea en mayuscula o minuscula. y si trambien en caso de que queramos informar al usuario 
+          el porque no se permite su valor, le podemos decir por medio de title-->
+        <br>
+        <label for="para_la_contraseña">Ahora La Contraseña:</label>
+        <input type="password" placeholder="Contraseña" id="para_la_contraseña" name="password" required>
+        <!-- Notar que usamos un indentificado id en cada uno de los elementos de formulario, hacemos en este caso para poderlos relacionar con la 
+          etiqueta label (Notar que el id de ellos es el for y debe tener el mismo valor que el id correspondiente). al hacer esto y su le damos clik 
+        al texto de los labe, veamos quye pasa-->
+        <br>
+        <input type="submit">
+        <br>
+        <!-- Cuando le damos a enviar nos vamos a https://www.jonmircha.com/, notar que ya no muestra los valores de las variables que le pasamos -->
+        <input type="reset">
+        <br>
+      </form>
+      <h3>Selcts, Radios y Checkbox</h3>
+      <form action="">
+        <select name="idioma" id="" required>
+          <!-- Usamos require para que el ususario si o si escoja un elemento valido (es decir, que el atributo value tenga algo y no vacio) -->
+          <option value="" selected>Escoge un idioma</option>
+          <!-- Usamos selected para que esa option siempre este de primera por determinado -->
+          <option value="ES">Español</option>
+          <option value="ENG">Ingles</option>
+          <option value="FR">Grances</option>
+        </select>
+          <!-- Notar que ahora nos manda la varible idioma asi index.html?idioma=ES#formulario, idioma = ES -->
+
+        <p>Selecciona tu lenguaje de Programacion favorito</p>
+        <!-- Es importante que el name (Nombre de la variable) se igual en los tres radios/botones esto para que solo deje seleccionar
+            un elemento y no varios, pues si le colocasemos de diferente nombre, estariamos enviando mas de una variable de esta seccion 
+            (para el caso de que queramos que se mande una o mas variables, usariamos checboxs)-->
+        <input type="radio" name="lenguaje" id="javascript" value="Javascript" required> 
+        <label for="javascript">Javacript</label>
+
+        <input type="radio" name="lenguaje" id="python" value="Python" checked>
+        <label for="python">Python</label>
+      
+        <input type="radio" name="lenguaje" id="java" value="Java">
+        <label for="java">Java</label>
+        <!-- cuando le damos enviar nos manda el valor del ididoma y del lenguaje index.html?idioma=ES&lenguaje=Python#formulario -->
+
+        <p>Escoge tus pokemonones favorito</p>
+        <!-- Para las checboxes podemos escribirlas de esta forma (aunque tambien lo podemos escribir como en los radio/botones)
+            y tambien aqui no es necesario colocar un name diferente para cada checbox, pues con este elemeto de formulario es permitir
+            al usuario que escoja mas de una opcion (aunque si quisieramos podemos colocar un name diferente para cada uno) -->
+        <label>
+          <input type="checkbox" name="Pokemon" value="Charizard">
+          Charizard
+        </label>
+        <!-- Igualmente tamboen podemos usar checked para dejar esta casilla marcado por defecto -->
+        <label>
+          <input type="checkbox" name="Pokemon" value="Gengar" checked>
+          Gengar
+        </label>
+        <label>
+          <input type="checkbox" name="Pokemon" value="Pikachu">
+          Pikachu
+        </label>
+        <label>
+          <input type="checkbox" name="Pokemon" value="Dragonite">
+          Dragonite
+        </label>
+        <label>
+          <input type="checkbox" name="Pokemon" value="Nidoking">
+          Nidoking
+        </label>
+        <!-- Notemos que si seleccionamos todas las checboxes, ahora se mandan varias varibles Pokemon 
+          index.html?idioma=ES&lenguaje=Python&Pokemon=Gengar&Pokemon=Charizard&Pokemon=Pikachu&Pokemon=Dragonite&Pokemon=Nidoking#formulario -->
+        <br>
+        <p>¿Aceptas terminos y condiciones?</p>
+        <input type="checkbox" id="terminos" required>
+        <label for="terminos">Aceptar</label>
+        <br>
+        <input type="submit">
+        <input type="reset">
+      </form>
+      <h3>Formulario de contacto</h3>
+      <!-- https://formsubmit.co/ -->
+      <!-- En este formulario enviaremos un mensaje de conctato a nuestro correo (johanrobles66@yahoo.com), para usamos este pagina web 
+          https://formsubmit.co/ y de aseguranos de que nuestro archichi estre montado en un servidor (Usamon la extensio de Visual Estudio Code
+          Live Server)-->
+      <form action="https://formsubmit.co/johanrobles66@yahoo.com" method="POST">
+        <input type="text" name="nombre" placeholder="Escribe tu nombre" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+          title="Nombre sólo acepta letras y espacios en blanco" required>
+        <br>
+        <input type="email" name="correo" placeholder="Escribe tu correo" pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$"
+          title="Formato de correo inválido" required>
+        <br>
+        <textarea name="comentarios" cols="30" rows="10" required></textarea>
+        <br>
+        <input type="submit">
+      </form>
+  <a href="index.html#temario">⏫</a>
+  <hr>
+
+  <h2 id="data-aytributes">Data-Atrubutes</h2>
+  <!-- Nosotros podemos crear nuestros popios atributos, para esto usamos data-nombre del atributo = "". en cursos posteriores, veremos y usamos mas a fondo este concepto -->
+  <ul>
+    <li data-id="1" data-name="spring">Primavera</li>
+    <li data-id="2" data-name="summer">Verano</li>
+    <li data-id="3" data-name="autumn">Otoño</li>
+    <li data-id="4" data-name="winter">Invierno</li>
+  </ul>
+
+  <a href="index.html#temario">⏫</a>
+  <hr>
+
+    <!-- Para usar codigo Javscript en HTML, usamos la etiqueta script
+        Cabe destacar que el codigo Javascript siempre debe ir al final 
+        del codigo HTML, ates de finalizar el body -->
+    <script>
+        console.log('Hola Toy Aprendiento HTML!!')
+    </script>   
+    <!-- Para llamar codigo Javascript  en HTML usamos la etiqueta script, pero con su atributo src
+        debememos pasarle la direccion del archivo javascript -->
+    <script src="assest/codes.js"></script>
+</body>
+
+</html>

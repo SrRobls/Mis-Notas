@@ -1,0 +1,23 @@
+# Ejercicio #24: Escribir un programa que pregunte al usuario los números ganadores de la lotería primitiva,
+# los almacene en una lista y los muestre por pantalla ordenados de menor a mayor.
+
+numLoteria = []
+cantidadLoteria = int(input('¿Cuantos numero de loterias son ganadoras?: '))
+for i in range(cantidadLoteria):
+    numLoteria.append(int(input(f'Dame el numero de la loteria #{i+1}: ')))
+print(numLoteria)
+#Acomodar de menor a mayor la loterias:
+caja = None #Nos serira como contenenor. esto para ordenar la lista de numeros
+for i in range(0, len(numLoteria)-1, 1): #Usamos len(numLoteria)-1 para que el bucle no de fallo por indices fuera de rango
+    for j in range(0, len(numLoteria)-1, 1):
+        if numLoteria[j+1] <= numLoteria[j]:
+            caja = numLoteria[j]
+            numLoteria[j] = numLoteria[j + 1]
+            numLoteria[j + 1] = caja
+print('los numeros de loteria proporcionado de menor a mayor son: ')
+print(numLoteria)
+
+# Otra forma mas simple para hacer este ejercicio es:
+# La funcion .sort ordena los elementos que hay en una lista
+numLoteria.sort()
+print(numLoteria)

@@ -1,0 +1,15 @@
+# Ejecicio #39: Escribir un programa que cree un diccionario vacío y lo vaya llenado con información sobre una
+# persona (por ejemplo nombre, edad, sexo, teléfono, correo electrónico, etc.) que se le pida al usuario. Cada vez
+# que se añada un nuevo dato debe imprimirse el contenido del diccionario.
+diccPiInformtaion = {} # diccionario vacio
+listPInformation = [] #lista con los datos que pediremos
+j = True
+# Pedimos los datos a introducir al usuario, lo guaradamos en la lista
+while j: #sabemos que while ejecutara siempre y cuando la condicion sea verdadera/true
+    listPInformation.append(input('¿Que valor quieres introducir?: '))
+    j = input('¿Quieres segir agregando? (si o no): ') == 'si' #si el intput es 'si' j es true si no, es false
+
+for i in listPInformation: # i pasar por los elementos de lita de los datos que obteneremos del usuario
+# creamos un key que tendra el valor de i de la lista, leugo le pedimos al usuario que nos de el value de ese key i
+    diccPiInformtaion[i] = input(f'Dame tu {i}: ')
+    print(diccPiInformtaion)# imprimimos el diccionario para que nos muestre los key:value del mismo

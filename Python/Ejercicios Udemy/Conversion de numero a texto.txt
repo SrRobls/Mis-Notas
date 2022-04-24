@@ -1,0 +1,11 @@
+#conversion numero a texto
+numero = int(input('Dame un numero del 1 al 3: '))
+
+if numero == 1:
+    print(f'El numero inntrucido ({numero}) es el uno')
+elif numero == 2:
+    print(f'El numero inntrucido ({numero}) es el dos')
+elif numero == 3:
+    print(f'El numero inntrucido ({numero}) es el tres')
+else:
+    print('ERROR')

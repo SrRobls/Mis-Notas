@@ -1,0 +1,25 @@
+# Ejercicio #57: Escribir un programa que reciba una cadena de caracteres y devuelva un diccionario con cada palabra
+# que contiene y su frecuencia. Escribir otra función que reciba el diccionario generado con la función anterior y
+# devuelva una tupla con la palabra más repetida y su frecuencia.
+
+def palabras(x):
+    x = x.split()
+    dictpalabras = {}
+    for i in x:
+        if (i in dictpalabras): #comprobar si i estaba en el diccionario
+             dictpalabras[i] += 1
+        else:
+            dictpalabras[i] = 1
+    return dictpalabras
+print(palabras('Como quieres que te quiera si el que quiero que me quiera no me quiere como quiero que me quiera'))
+
+def frecuencia(y):
+    resultado = ()
+    frecuencia = 0
+    palabraMayor = None
+    for key, value in y.items():
+        if value >= frecuencia:
+            frecuencia = value
+            resultado = (key, value)
+    return resultado
+print(frecuencia(palabras('Como quieres que te quiera si el que quiero que me quiera no me quiere como quiero que me quiera')))

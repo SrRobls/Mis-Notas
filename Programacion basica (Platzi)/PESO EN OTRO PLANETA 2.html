@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>TU PESO EN OTRO PLANETA</title>
+ 	</head>
+ 	<body>
+ 		<h1>Tu peso En Otro Planeta</h1>
+ 		<p> pesamos diferente en otros planetas</p>
+ 		<script type="text/javascript">
+ 			var usuario = parseFloat(prompt("¿Cual es tu peso?"));
+ 			var decision = prompt("¿en cual palaneta deseas saber tu peso?. \n1 es para marte. \n2 es para jupiter. \n3 es para neptuno. \n4 es para venus");
+ 			var usuario = usuario;
+ 			var g_tierra = 9.8;
+ 			var g_marte = 3.7;
+ 			var g_jupiter = 24.8;
+ 			var g_neptuno = 11.0;
+ 			var g_venus = 8.87;
+ 			var nombre;
+ 			if(decision == 1) {
+
+              peso_final = usuario * g_marte / g_tierra;
+              nombre = "marte";
+ 			}
+ 			else if(decision == 2){
+
+ 			   peso_final = usuario * g_jupiter / g_tierra;
+ 			   nombre = "jupiter";
+ 			}
+ 			else if(decision == 3){
+
+ 			   peso_final = usuario * g_neptuno / g_tierra;
+ 			   nombre = "neptuno";
+ 			}
+ 			else if(decision == 4){
+
+ 			   peso_final = usuario * g_venus / g_tierra;
+ 			   nombre = "venus";
+ 			}
+ 			else{
+ 				peso_final = 99999999;
+ 				nombre = "urano XD";
+ 			}
+           peso_final = parseInt(peso_final);
+ 			alert("tu peso en " + nombre + " es de " + peso_final + " kilogramos");
+ 			document.write("<strong>tu peso en " + nombre + " es de " + peso_final + " kilogramos</strong>");
+
+ 			
+ 		</script>
+ 	</body>
+</html>

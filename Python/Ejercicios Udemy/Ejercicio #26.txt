@@ -1,0 +1,21 @@
+# Ejercicio #26: Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física,
+# Química, Historia y Lengua) en una lista, pregunte al usuario la nota que ha sacado en cada asignatura y elimine de
+# la lista las asignaturas aprobadas. Al final el programa debe mostrar por pantalla las asignaturas que el usuario
+# tiene que repetir.
+
+materias = ['Matematicas', 'Fisica', 'Quimica', 'Historia', 'Lengua']
+notas = []
+for i in range(len(materias)):
+    notas.append(float(input(f'Dame la nota de {materias[i]}: '))) #Agregamos en la lista notas los valor aportados por el usuario
+
+print('------------------------------------')
+# Mostrando las materias y sus notas:5
+for i in range(len(materias)):
+    print(f'Yo estudio {materias[i]} y saque {notas[i]}')  # i recorre cada alabra de la lista materias
+#Mostrar materias que hay que repetir:
+print('Materias a repetir: ')
+for i in range(len(materias)):
+    if notas[i] < 3:
+        print(materias[i], end=',')
+else:
+    print(' ')

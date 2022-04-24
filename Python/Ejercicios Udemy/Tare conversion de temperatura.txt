@@ -1,0 +1,22 @@
+ejercicio:Realizar dos funciones para convertir de grados celsius a fahrenheit y viceversa
+
+def celciusFarenheit(celcius):
+	return (celcius*9/5) + 32
+
+def farenheitCelcius(farenheit):
+	return (farenheit - 32)*5/9
+
+opcion = int(input(f'''
+¿Que deseas?
+1. Pasar de celcius a farenheit
+2. pasar de farenheit a celcius
+'''))
+
+if opcion == 1:
+	valor = int(input('Dame el valor en grados celcius: '))
+	print(f'la conversion es: {celciusFarenheit(valor)} F')
+elif opcion == 2:
+	valor = int(input('Dame el valor en grados farenheit: '))
+	print(f'La conversion es: {celciusFarenheit(valor)} C')
+else:
+	print('ERROR:opcion fuera de parametros')

@@ -1,0 +1,15 @@
+x = float(input())
+y = float(input())
+z = float(input())
+if x >= y >= z:
+    print(f'{y} es la mediana')
+elif y >= z >= x:
+    print(f'{z} es la mediana')
+elif z >= x >= y:
+    print(f'{x} es la mediana')
+elif x <= y <= z:
+    print(f'{y} es la mediana')
+elif y <= z <= x:
+    print(f'{z} es la mediana')
+elif z <= x <= y:
+    print(f'{x} es la mediana')

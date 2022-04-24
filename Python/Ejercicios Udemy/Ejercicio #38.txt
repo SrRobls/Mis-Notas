@@ -1,0 +1,15 @@
+# Ejecicio #38: Escribir un programa que almacene el diccionario con los créditos de las asignaturas de un curso {
+# 'Matemáticas': 6, 'Física': 4, 'Química': 5} y después muestre por pantalla los créditos de cada asignatura en el
+# formato <asignatura> tiene <créditos> créditos, donde <asignatura> es cada una de las asignaturas del curso,
+# y <créditos> son sus créditos. Al final debe mostrar también el número total de créditos del curso.
+sum = 0
+materiasCreditos = {
+    'matematicas': 6,
+    'fisica': 4,
+    'quimica': 5
+}
+# usmaos la funcion .items para que 'key' y 'value' accedan a cada llave y valor respectivamente
+for key, value in materiasCreditos.items():
+    print(f'La asignatura {key} tiene {value} creditos')
+    sum += value
+print(f'Total creditos: {sum}')

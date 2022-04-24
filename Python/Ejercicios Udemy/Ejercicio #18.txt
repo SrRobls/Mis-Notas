@@ -1,0 +1,17 @@
+# Ejercicio #18: Escribir un programa que almacene la cadena de caracteres contraseña en una variable, pregunte al
+# usuario por la contraseña hasta que introduzca la contraseña correcta.
+
+password = 'HolaWorld'
+print('Numero Total de intentos: 3')
+passwordUsuario = input('Dime la contraseña: ')
+intentos = 0
+while passwordUsuario != password:
+    intentos += 1
+    if intentos == 3:
+        print('Este fue tu intento #3. vuelve mas tarde')
+        break
+    else:
+        print(f'Intento {intentos}')
+        passwordUsuario = input('Contraseña Incorrecta Vuelve a Intentarlo: ')
+else:
+    print('Contraseña Correcta')

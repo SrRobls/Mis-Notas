@@ -1,0 +1,18 @@
+# Ejercicio #56: Escribir una función que convierta un número decimal en binario y otra que convierta un número
+# binario en decimal.
+
+def numBinario(x):
+    binario = []
+    x = int(x)
+    while x >= 1:
+        binario.append(x % 2)
+        x = int(x / 2)
+    return binario[::-1]
+print(numBinario(512))
+def binarioNum(x):
+    binario = 0
+    x.reverse() #funcion que poner alrevez los componentes de una arreglo
+    for i in range(len(x)):
+        binario += x[i]*(2**i)
+    return binario
+print(binarioNum([1, 0, 0, 1, 0, 1]))

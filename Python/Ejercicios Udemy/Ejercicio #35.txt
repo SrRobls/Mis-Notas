@@ -1,0 +1,12 @@
+# Ejecicio #35: Escribir un programa que pregunte al usuario su nombre, edad, dirección y teléfono y lo guarde en un
+# diccionario. Después debe mostrar por pantalla el mensaje <nombre> tiene <edad> años, vive en <dirección> y su
+# número de teléfono es <teléfono>.
+# Nota: Podemos crear un diicononario en la que sus en la llaves (keys) podamos pedirle su valor por input:
+personalInformation = {
+    'nombre': input('Please, give your name: '),
+    'edad': int(input('how old are you?: ')),
+    'direccion': input('What is your direction?: '),
+    'numero': int(input('What is your cellphone number?: '))
+}
+print(personalInformation['nombre'], ' tiene ', personalInformation['edad'], ', vive en ',
+      personalInformation['direccion'], ' y su numeor telefonico es ', personalInformation['numero'])

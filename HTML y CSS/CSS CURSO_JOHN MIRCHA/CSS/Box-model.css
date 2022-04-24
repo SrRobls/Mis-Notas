@@ -1,0 +1,241 @@
+html {
+    background-color: beige;
+}
+
+/* 
+https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/El_modelo_de_caja
+Modelo de Caja: Es la forma en que CSS ve a los elementos HTML y ¿cómo los ve? como si fueran cajas con las siguientes propiedades:
+  1. El contenido (content): El contenido (texto) del elemento HTML, tomando en cuanta sus dimensiones (width & height)
+  2. El borde (border): Lo que delimita cada uno de los elementos HTML
+  3. El relleno (padding): Son las distancias internas (La distancia del borde al contenido)
+  3. El márgen (margin): Son las distancias externas (La distancia entre el elemento html y sus elementos hermanos o padres)
+Dentro del modelo de caja hay que considerar que una caja tendrá 4 lados:
+  1. Arriba (top)
+  2. Derecha (right)
+  3. Abajo (bottom)
+  4. Izquierda (left)
+*/
+
+h1{
+  /* Para cambiar valores al contento, le cambiamos valores a width y height */
+  width: 400px;
+  height: 50px;
+  /* Para cambiar estylo a los border */
+  /* usamos border-width para cambiar los pixeles o el ancho del borde */
+  border-width: 4px;
+  border-color: red;
+  /* border-styñle sirve para cambiar la forma del borde */
+  border-style: solid;
+  /* Podemos dar estilo  a los bordes en una sola linea, esto los hacemos con border: estilo estilo estilo ...*/
+  border: 5px blue dotted;
+}
+
+.caja-uno, .caja-dos{
+  background-color: chocolate;
+  border: medium solid orange;
+  /* 
+  Esto aplica para margin y padding
+  1 valor = aplicar a los 4 lados
+  2 valores =
+    primer valor es para los lados verticales (t/b)
+    segundo valor es para los lados horizontales (l/r)
+  3 valores =
+    primer valor es para top
+    segundo valor es para los lados horizontales (l/r)
+    tercer valor es para bottom
+  4 valores = Piensa en las manecillas del reloj
+    primer valor es para top (12)
+    segundo valor es para right (3)
+    tercer valor es para bottom (6)
+    cuarto valor es para left (9)
+    */
+  /* 1 valor */
+  padding: 20px;
+  margin: 20px;
+  /* 2 valores */
+  padding: 20px 40px;
+  margin: 40px 20px;
+  /* 3 valores */
+  padding: 0 40px 20px;
+  margin: 50px 30px 0;
+  /* 4 valores */
+  padding: 0 40px 20px 50px;
+  margin: 100px 50px 30px 0;
+}
+
+/* 
+Caja de Línea
+  - Ocupan el espacio necesario para mostrar su contenido.
+  - No tienen dimensiones modificables (alto, ancho).
+  - Permiten otros elementos a su lado.
+  - Padding y margin solo empujan a elementos adyacentes en horizontal, NUNCA EN VERTICAL.
+Caja de Bloque
+  - Ocupan todo el ancho disponible, lo que genera saltos de línea.
+  - Tienen dimensiones modificables (alto, ancho).
+  - No permiten otros elementos a su lado (aunque especifique un ancho, siguen ocupando todo el espacio disponible a lo ancho, generando saltos de línea).
+*/
+
+.caja-linea,
+.caja-bloque {
+  background-color: darkcyan;
+  color: white;
+  width: 500px;
+  height: 250px;
+  border: medium solid black;
+  padding: 16px;
+}
+
+.caja-bloque {
+  margin: 32px;
+  display: block;
+}
+
+.caja-linea {
+  margin: 48px;
+  display: inline;
+}
+
+/* 
+Propiedad Display
+  inline
+  block
+  inline-block - Se comporta como un elemento de línea pero acepta modificar sus dimensiones (alto y ancho)
+  none
+  table
+  list-item
+  flex - ve mi curso de Flexbox CSS
+  grid - ve mi curso de Grid CSS
+*/
+
+.caja-none,
+.caja-linea-bloque,
+.caja-hidden {
+  background-color: darkolivegreen;
+  color: white;
+  width: 600px;
+  height: 300px;
+  border: medium solid black;
+}
+
+.caja-linea-bloque {
+  display: inline-block;
+}
+
+/* usamos display:None para ocultar el contenido del elemento con clase caja-none. ojo eso no significa que no se vaya a cargar */
+.caja-none {
+  display: none;
+}
+
+/* con la propiedad visibility: none podemos es como llevar la opacidad del elemento a cero. es casi similar a display none */
+.caja-hidden {
+  visibility: hidden;
+}
+
+/* Overflow */
+
+.overflow {
+  background-color: darkturquoise;
+  width: 200px;
+  height: 100px;
+  /* overflow:visible es el queviene por defecto, lo que hace es mostrar todo el texto, tanto el que esta dentro como esta afuura (testo dentro y fuera de
+  la dimensiones del contente, widht y height) */
+  overflow: visible;
+  /* con hidden solo mmuestra lo que cabe dentro de las dimensiones y oculta el resto */
+  overflow: hidden;
+  /* con scroll permite metero todo en la dimension y nos deja visializar todo el contenido con un scroll */
+  overflow: scroll;
+  /*con auto se creara scroll tanto vertical como horizontal dependiendo del contenido y las dimensiones */
+  overflow: auto;
+  /* podemos crear scrool tanto para verticial como horizontal */
+  /* overflow-y: scroll; */
+  /* overflow-x: scroll; */
+}
+
+
+/* 
+Tamaño de Caja
+*/
+
+/* los box-sizing nos sirve para ajustar los comportamientos del tamaño de caja (dimensiones de la caja; width y height). por 
+defecto los tamaño de caja viene con box-sizing: content-box */
+
+.box-sizing-content,
+.box-sizing-border {
+  background-color: deepskyblue;
+  /* conten-box es el que viene por defecto */
+  box-sizing: content-box;
+  /* asignemos les valores a las dimensiones de la caja*/
+  width: 500px;
+  height: 250px;
+  /* notar que cuando le agregamos padding y border el tamaño de la caja aumenta. en el inspeccionar se mostrara los valores que le dimos, pero
+  visualmente sera mas grande. y si hacemos hover sobre el elemento, veremos que su dimensiones aumentaron. entonces inferimos que con content-box
+  al aplicar estilos de modelo de caja afecta las dimensiones de la caja y tambien el contento se mantiene con las dimensiones dadas, pero la caja en general
+  los aumeenta*/
+  padding: 10px;
+  /* thick = 5px */
+  border: thick solid black; 
+  /* w 500 + 10 + 10 + 5 + 5 = 530 */
+  /* h 250 + 10 + 10 + 5 + 5  = 280 */
+}
+
+.box-sizing-border {
+  /* caso contrario a de content-box es border-box. aca el tamaño de la caja en general NUNCA aumenta y se mantiene, al agregar padding y border
+  estos estilos vine dentro del tamaño de la caja y por tanto no aumentan su dimensiones. por general este es el mejor metodo si queremos darle
+  estilo a nuestras cajas */
+  box-sizing: border-box;
+}
+
+/* por tanto existe un metodo para que todos los elementos de nuestra web se obtenga el atributo border-box. (aplicar al principio del la hoja
+de estilos) 
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+apply a natural box layout model to all elements, but allowing components to change
+*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Colapso de Márgenes Verticales */
+
+/* Los margenes verticales (top y bottom) de los elementos NO se suman (por decirlo asi) para la separacion de los elmentos, mas bien, podemos interpretarlo como si 
+compartiera el mismto tamaño de margen uno con la otra*/
+.margin-collapse {
+  background-color: skyblue;
+}
+
+.margin-collapse section {
+  border: thin solid black;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* Pero para las margenes horizontales (left y right) SI se suman, aca cada elemnto no comparte su margen horizontal con las otras, de tal forma la
+distancia entre ellas horizontalmente aumentan el doble que con las margenes verticales*/
+.margin-collapse span {
+  border: thin solid black;
+  /* recordemos que display: inline hacen que se comporten como un elemento de línea pero acepta modificar sus dimensiones (alto y ancho) */
+  display: inline-block;
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+/* Centrado de Cajas */
+.sitio-web {
+  border: thin solid black;
+  background-color: thistle;
+  width: 800px;
+  height: 1000px;
+  padding: 16px;
+  margin-top: 20px;
+  /* Usamos text-align: center para centrar el contenido de la caja */
+  text-align: center;
+  /* y usamos  margin-righ: auto y margin-left: auto para centrar la caja en nuestra pagina */
+  margin-left: auto;
+  margin-right: auto;
+  /* margin: 0 auto; */
+}

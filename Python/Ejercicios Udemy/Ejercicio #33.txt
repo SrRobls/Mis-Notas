@@ -1,0 +1,41 @@
+# Ejecicio #33: Escribir un programa que pregunte por una muestra de números, separados por comas, los guarde en una
+# lista y muestre por pantalla su media y desviación típica.
+
+numbers = []
+suma = 0
+sumaAlaDos = 0
+tipicDiviation = 0
+i = True
+while i == True:
+    numbers.append(int(input('Give me a number: ')))
+    decision = input('Do you want continue introducing numbers? (yes or not); ')
+    if decision.lower() == 'si' or decision.lower() == 'yes':
+        continue
+    elif decision.lower() == 'no' or decision.lower() == 'not':
+        break
+#Calculate the avarage
+print(f'The numbers introduced is {numbers}')
+for i in numbers:
+    suma += i
+avarage = float(suma/len(numbers))
+#Calculate the tipic deviation:
+for i in numbers:
+    sumaAlaDos += (i)**2
+
+tipicDiviation = float(((sumaAlaDos/len(numbers))-(avarage)**2)**(1/2))
+print(f'The avarage is {avarage} and the tipic deviation is {tipicDiviation}')
+# otra forma es:
+
+num = input('Give a numbers separated by (,): ')
+num = num.split(',')
+len(num)
+#calculate avarage
+for i in range(len(num)):
+    suma += int(num[i])
+avarage = suma/len(num)
+
+#Now calculate the tipic deviation:
+for i in range(len(num)):
+    sumaAlaDos += (int(num[i]))**2
+tipicDiviation = float(((sumaAlaDos/len(num))-(avarage)**2)**(1/2))
+print(f'The avarage is {avarage} and the tipic deviation is {tipicDiviation}')

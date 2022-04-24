@@ -1,0 +1,14 @@
+# Ejercicio #15: Escribir un programa que pida al usuario un número entero y muestre por pantalla un triángulo
+# rectángulo como el de más abajo, de altura el número introducido.
+
+# *
+# **
+# ***
+# ****
+# *****
+
+numero = int(input('Dame un numero: '))
+for i in range(0, numero+1, +1): #aqui usamos range(numero de inicio, numero final, paso con el que va), si lo imprimimos no saldria el numero final, por eso le ponemos el +1
+    for j in range(0, i, +1):
+        print('*', end='')
+    print(end='\n')

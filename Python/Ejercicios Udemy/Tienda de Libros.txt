@@ -1,0 +1,21 @@
+#Tienda de libros:
+nombre = input('¿Cual es el nombre de libro?: ')
+id = int(input('Dame si Id: '))
+precio = float(input('¿Cual es su precio?: '))
+#envio = bool(input('¿El envio es gratuito? (False/True): '))
+envio = (input('¿El envio es gratuito? (False/True): '))
+#Nota NO podemos usar Bool(input(.....)) ya que el bool lo inteprta distinto al caso que queremos
+# porque si metemos cualquier "cosa" dentro de esa variable lo interpretara como True, pero si no metemos nada lo hara como False
+if envio == 'True' or envio == 'si':
+    envio = True
+elif envio == 'False' or envio == 'no':
+    envio = False
+else: envio = 'Error'
+
+print(f'''
+   nombre: {nombre}
+   Id: {id}
+   precio: {precio}
+   envio: {envio}
+''')
+#f'texto' es una forma mas recomendada de imprimir algo en pantalla. si queremos imprimir un parrafo grande usamos f'''texto'''

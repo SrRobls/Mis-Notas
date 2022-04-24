@@ -1,0 +1,49 @@
+# Ejercicio #12: La pizzería Bella Napoli ofrece pizzas vegetarianas y no vegetarianas a sus clientes. Los
+# ingredientes para cada tipo de pizza aparecen a continuación.
+
+# Ingredientes vegetarianos: Pimiento y tofu.
+# Ingredientes no vegetarianos: Peperoni, Jamón y Salmón.
+
+# Escribir un programa que pregunte al usuario si quiere una pizza vegetariana o no, y en función de su respuesta le
+# muestre un menú con los ingredientes disponibles para que elija. Solo se puede eligir un ingrediente además de la
+# mozzarella y el tomate que están en todas la pizzas. Al final se debe mostrar por pantalla si la pizza elegida es
+# vegetariana o no y todos los ingredientes que lleva.
+
+print('                ¡Bienvenido a La pizzeria Bella!')
+opcion = int(input('''¿Que quieres?
+* Pizza vegetariana (1)
+* Pizza no vegetariana (2)
+'''))
+ingrediente = ''
+if opcion == 1:
+    opcion = 'Vegetariana'
+    print('Los ingredientes para la pizza vegetariana son:\n *Pimiento\n *Tofu')
+    opcionIngrediente = input('Dime que ingrediente quieres en tu pizza vegetariana: ')
+    if opcionIngrediente.lower() == 'pimiento':
+        ingrediente = 'Pimiento'
+    elif opcionIngrediente.lower() == 'tofu':
+        ingrediente = 'Tofu'
+    else:
+        ingrediente = 'ERROR'
+        print('ERROR: Ingrediente Invalido')
+elif opcion == 2:
+    opcion = 'No Vegetariana'
+    print('Los ingredientes para la pizza NO vegetariana son:\n *Peperoni\n *Jamon\n *Salmon ')
+    opcionIngrediente = input('Dime que ingrediente quieres en tu pizza NO vegetariana: ')
+    if opcionIngrediente.lower() == 'jamon':
+        ingrediente = 'Jamon'
+    elif opcionIngrediente.lower() == 'peperoni':
+        ingrediente = 'Peperoni'
+    elif opcionIngrediente.lower() == 'salmon':
+        ingrediente = 'Salmon'
+else:
+    ingrediente = 'ERROR'
+    print('ERROR: Opcion invalida')
+print('--------------------------------------------------------------------------------------------')
+print(f'''
+Pizza seleccionada es: Pizza {opcion} 
+ingredientes: 
+*{ingrediente}
+*Mozarrela
+*Tomate
+''')

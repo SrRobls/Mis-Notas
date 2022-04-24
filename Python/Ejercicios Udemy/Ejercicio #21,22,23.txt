@@ -1,0 +1,23 @@
+# Ejercicio #21: Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física,
+# Química, Historia y Lengua) en una lista y la muestre por pantalla
+materias = ['Matematicas', 'Fisica', 'Quimica', 'Historia', 'Lengua']
+print(materias)
+# Ejercicio #22: Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física,
+# Química, Historia y Lengua) en una lista y la muestre por pantalla el mensaje Yo estudio <asignatura>,
+# donde <asignatura> es cada una de las asignaturas de la lista.
+print('----------------------------------')
+for i in materias:
+    print(f'Yo estudio {i}')  # i recorre cada alabra de la lista materias
+
+# Ejercicio #23: Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física,
+# Química, Historia y Lengua) en una lista, pregunte al usuario la nota que ha sacado en cada asignatura,
+# y después las muestre por pantalla con el mensaje En <asignatura> has sacado <nota> donde <asignatura> es cada una
+# des las asignaturas de la lista y <nota> cada una de las correspondientes notas introducidas por el usuario.
+print('-----------------------------------')
+
+notas = [None]
+for i in range(len(materias)):
+    notas.append(int(input(f'Dame la nota de {materias[i]}: '))) #Agregamos en la lista notas los valor aportados por el usuario
+
+for i in range(len(materias)):
+    print(f'Yo estudio {materias[i]} y saque {notas[i]}')  # i recorre cada alabra de la lista materias

@@ -1,0 +1,375 @@
+/* Para comenzar a diseñar, debemos lammar al selector y los bloquees de declaraciones */
+
+/* llammamos al selector h1, en la cual todas las declaraciones que es metan aca afectara a todos los h1  */
+
+
+/* Si queremos llamar a otra hoja de css usamos import y en  url colocamos la direccion de la hoja
+Pero estas importaciones son malas practicas porque a la hora del navegador leer el codigo este se drtendra aqui hatsa que obtiene 
+informacion de la hoja llamda, lo cual es perjudicial. */
+@import url('otra_hoja.css');
+
+html {
+    background-color:beige;
+}
+
+h1 {
+    /* blouqes de delaraciones, cambiamos el color y el color de fondo */
+    color: crimson;
+    background-color: aquamarine;
+}
+
+h2 {
+    color: green;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-decoration :underline;
+}
+
+h3 {
+    color:darkgreen;
+}
+
+h4 {
+    color: deeppink;
+}
+/* 
+Selectores Básicos
+  1) Etiquetas - son elementos html
+  2) Identificadores - atributo id - #
+  3) Clases - atributo class - .
+*/
+
+/* Para dar estilo a un selector con id, usamos #nombre-del-d */
+/* Es mala practica usra id para dar estilos, lo mejor es usar class ya que con este podemos reutilizarla para dar estilo a otras
+etiquetas a la vez. */
+#parafo-dos {
+    color: blueviolet;
+}
+
+/* Para dar estilo con class usamos .nombre-de-la-clase */
+.text-20 {
+    font-size: 20px;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-40 {
+    font-size: 40px;
+}
+
+.text-red {
+    color: red;
+}
+
+.hijos-directos {
+    background-color:aqua;
+}
+
+.hijos-descendientes b {
+    background-color: aqua;
+}
+
+/* Los selectores de hermanos van a aplicar a todos los elementos que son hermanos y que estén por debajo del elemento de referencia */
+.hermanos-general ~ li {
+    background-color: aqua;
+}
+
+/* En caso de selectores de tipo hermano adyacente, se aplicaran estilos al elemento hermano (del mismo tipo o el tipo que referenciemos) 
+y este debajo del el.*/
+.hermanos-adyacente + p{
+    background-color: aqua;
+}
+
+
+/* Esramos dicindo que los elemtos a que tangan como atributo href del elemento que tiene la id, seran de color rojo.*/
+/* #temario a[href]{
+    color: red;
+} */
+
+/* Selectores de atributos */
+.selectores-atributos a[href] {
+    color: orangered;
+  }
+  
+  /* Podemos especificar que valor tien el atributo. */
+  .selectores-atributos a[target="_blank"] {
+    font-weight: bold;
+  }
+  
+  /* El comodín del * aplica el estilo si contiene el texto en cuestión en cualquier parte */
+  .selectores-atributos a[href*="jonmircha"] {
+    font-size: 24px;
+  }
+  
+  /* El comodín del ^ aplica el estilo si contiene el texto en cuestión al inicio */
+  .selectores-atributos a[href^="http://"]
+  {
+      /* Para quitar el borde de los linknes */
+    text-decoration: none;
+  }
+  
+  /* El comodín del $ aplica el estilo si contiene el texto en cuestión al final */
+  .selectores-atributos a[href$=".com"] {
+    background-color: black;
+  }
+  
+  /* El comodín del ~ aplica el estilo si contiene el texto en cuestión en una lista separada por espacios */
+  .selectores-atributos a[class~="cursos"] {
+    background-color: midnightblue;
+}
+  
+  /* El comodín del | aplica el estilo si contiene el texto en cuestión en una lista separada por espacios y que despues del texto en cuestión venga un guión medio - */
+  .selectores-atributos a[class|="menu"] {
+    font-style: italic;
+}
+
+/* Selector Universal */
+/* cuando usamos el * estamos aplicando estilos a los elementos que contiene el elemto que tiene la clase .selector-universal*/
+.selector-universal *{
+    font-size: 30px;
+    font-style: italic;
+}
+
+#temario a{
+    color: blue;
+}
+
+/* Pseudoclases */
+/* Dan estilos dependiendo del contexto, posición o estado del elemento */
+/* https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes */
+
+/* Para dar estilo a los links del temario cuando se pone el cursor encima de ellos */
+#temario a:hover{
+    color: red;
+}
+
+/* Para dar estilo a los todos los elemtos que esten contenido en el elemnto que tiene como clase form- y tengan
+como atributo el required. o mas señalar de señalar que es requerido mediante un color de borde*/
+.form-psudoclases *:required{
+    border-color: rgb(25, 36, 185);
+}
+
+/* para dar color de borde a lo elementos que sean validos. tambien existe un psucodigo que se llama invalid y se usa para elemntos
+invalidos.es muy usado para mostrar si u elemntois es valido o no, ejemplo en un imput donde se le pide el correo. */
+.form-psudoclases *:valid{
+    border-color: green;
+}
+/* darle estilo a todos los elementos (por eso el *)  del elemto que tiene la clase .form-psudoclases y que esten en focus, es decir, que se
+clikueen sobre el. */
+.form-psudoclases *:focus{
+    background-color: rgb(121, 19, 236);
+}
+
+/* Darle un color de fondo a los elemntos con atributo disable o que no esten disponible. lo mismo, se aplican los estilos a los elemntos que
+contiene l elemnto con clase .form-psudoclases */
+.form-psudoclases *:disabled{
+    background-color:dimgrey;
+}
+
+/* patra darle al parrafo con clase .p-lorem estilo cuando se tiene el curos por encima de el. */
+.p-lorem:hover{
+    font-size: 30px;
+    font-family: inherit;
+}
+
+/* Cambiar el color del termario cuando se le da click a un enlace que lo dirija hacia el. */
+#temario:target{
+    background-color:dimgray;
+}
+
+/* Psudocodicos por posicion y tipo. */
+/* Podemos aplicar estilos a elementos op elementos de elementos segun su poscicion y tipo*/
+
+/* Para aplicar estilo al primer elemento del elemento contenedor usamos tipo_elementos:first-child  */
+/* aca le aplicamos estilo al primero li de la lista ordenada con clase lista-pseudoclases */
+.lista-pseudoclases li:first-child{
+    background-color: red;
+}
+
+/* Para apicar estilo al ultimo elemento es lo mismo pero usamos last-child */
+.lista-pseudoclases li:last-child{
+    background-color: red;
+}
+
+/* Tambien podemos aplicar estilos dado un numero child dado. e inclusive darel estilos a una serie de elemntos/hijos dado una ecuacion de n */
+/* para el primer hijo */
+.lista-pseudoclases li:nth-child(1){
+    font-weight: bold;
+}
+/* Para el ultimo */
+.lista-pseudoclases li:nth-child(12){
+    font-weight: bold;
+}
+/* Para cada 3n -> (3, 6, 9, 12...) */
+.lista-pseudoclases li:nth-child(3n){
+    font-weight: bold;
+    background-color: red;
+}
+
+/* Para los pares, y si queremos para los impars usamos odd  */
+.lista-pseudoclases li:nth-child(even){
+    font-weight: bold;
+    background-color:darkmagenta;
+}
+
+/* Podemos aplicar estilos  al primer tipo de elementos que se encuentre*/
+/* Dandoles estilo a la primera etiquetra p que se encuentre */
+.articulo-pseudoclases p:first-of-type{
+    font-weight: bold;
+    color: red;
+}
+
+/* Para el ultimo etiqueta encontrado */
+.articulo-pseudoclases p:last-of-type{
+    font-weight: bold;
+    color: blue;
+}
+
+/* Como tambien podemos aplicar estilos a los tipo de elementos encontados segun un n */
+.articulo-pseudoclases p:nth-of-type(3){
+    font-weight: bold;
+    color: blue;
+    background-color: black;
+}
+
+.articulo-pseudoclases div:nth-of-type(1){
+    font-weight: bold;
+    color: blue;
+    background-color: whitesmoke;
+}
+
+/* Existe tambien un metodo que nos permite darle estilo a todos las etiqueta menos a una o varias */
+.articulo-pseudoclases *:not(section, footer){
+    font-size: 30px;
+}
+
+/* PseudoElementos */
+/* https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements */
+
+/* Usamos ::before o ::after para dar estilo (o agregar estilo) antes o despues del contenifo de la etiqueta*/
+
+.saga-geminis::before{
+    /* Usamos conten para agregar texto o contenido */
+    content: 'Saga: ';
+    font-weight: bold;
+}
+
+.saga-geminis::after{
+    content: '♊';
+}
+
+.saga-precio::before{
+    content: 'Precio: 💲';
+}
+
+.saga-precio::after{
+    content: ' USD';
+    font-weight: bold;
+}
+
+
+/* Usamos los pseudoelemntos first-letter y first-line para dar estilo a la primera o linea de una etiqueta*/
+.p-pseudoelemento::first-letter {
+    color: cadetblue;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.p-pseudoelemento::first-line{
+    color: cadetblue;
+    font-weight: bold;
+}
+
+/* Usamos ::selection para dar estilo a los valores que seleccionamos (que es como el movimento para copiar, cortar, o eliminar un texto) */
+.p-pseudoelemento::selection{
+    background-color: brown;
+}
+
+/* Cambiamos el estilo de seleccion en todo el texto de la web por usamos a * para referirno universalmente*/
+*::selection{
+    background-color:darkslategray;
+}
+
+/* Agrupar Selectores */
+/* podemos seleccionar mas de un selector para aplicar el mismo estilo en ellos! */
+.form-agrupar-selectores input[type = "text"],
+.form-agrupar-selectores input[type = "email"],
+.form-agrupar-selectores textarea{
+    /* usamos displat: block para que cada etiqueta se quede en una linea sola, es como aplicar br */
+    display: block;
+    border-color: red;
+    border-width: 3px;
+    font-size: 20px;
+    width: 300px;
+}
+
+/* Algoritmo en CSS */
+/* El Algoritmo de CSS: Es la forma en que el navegador aplica los estilos al documento HTML. 
+   Es vital entender este concepto para que entiendas como se aplican y en algunas ocasiones se 
+   sobreescriben las reglas CSS.
+  1) La Cascada.
+  2) La Especificidad.
+  3) La Herencia. */
+
+/* La Cascada es el mecanismo en que el navegador aplica los estilos. Y toma en cuenta lo siguiente en este orden:
+  1) El Origen del Código:
+    - El User Agent (los estilos por defecto del navegador)
+    - Personalizaciones del usuario.
+    - Los estilos del autor.
+  2) La Especificidad del Selector
+  3) Orden de Aparición */
+
+  /*La Especificidad es el peso que tiene un selector cuando hay conflicto de estilos. Se calcula de la siguiente forma:
+  Etiquetas y pseudoelementos -------------- 0,0,0,1
+  Clases, atributos y pseudoclases ------------0,0,1,0
+  Identificadores -------------------------------0,1,0,0
+  Estilos en línea--------------------------------1,0,0,0
+        Nos referoimos a estilos en linea cuando usamos la etiqueta style en el index.html
+  !important ------------------Rompe la especificidad
+        Cuando se usa !importan significa que queremos aplicar estilo a un elemento sin importar sin importar la casacada y la especifidad
+  estos dos ultimos se consideran malas practicas, asi que debemos evitar usarlas en lospisibles  */
+
+/* Veamos un ejemplo: */
+
+/* por cascada se aplica el estilo de la ultima etiqueta (.cita-clase) pues se quedaria con el ultimo selector. pero por especificidad
+se quedaria con  con el selector del id (#cita-id) pues su especifidad es mayor (100)*/
+
+/* estonces el navegador al final de cuentas se quedaria con #cita-id .
+
+de este modo podemos inferir que especificidad > cascada*/
+
+/* especifidad (0, 0, 1) */
+blockquote {
+    background-color: red;
+}
+
+/* especifidad (1, 0, 0) */
+#cita-id {
+    background-color: aliceblue
+}
+
+/* especifidad (0, 1, 0) */
+.cita-clase {
+    background-color: cornflowerblue !important;
+    background-color: brown !important;
+    font-size: 32px;
+    border-style: dotted;
+    border-color: black;
+}
+
+/* La Herencia, es la capacidad de un selector de obtener (heredar) los valores de sus ancestros más cercanos, para aplicarla se usa el 
+valor inherit, si queremos evitarla podemos asignar otro valor o inicializar la propiedad en cuestión con el valor initial */
+
+.cita-antonio {
+    /* Para heredar usamos inherit */
+    border-style: inherit;
+    border-color: inherit;
+    /* Si no queremos heredar nada un estilo a esta clase, basta con asiganar otro valor o inicializar el valor (initial) */
+    background-color:rgb(121, 19, 236);
+    font-size: initial;
+}
