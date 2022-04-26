@@ -1,5 +1,5 @@
-import time, turtle
 # creamos el ambiente turtle
+import time, turtle
 aprendiendo = turtle
 
 # mmandamos a llamar la pantalla
