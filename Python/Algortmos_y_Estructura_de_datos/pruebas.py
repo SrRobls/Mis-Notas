@@ -1,18 +1,12 @@
-print('   _______')
-print('  /  (.)  \ ')
-print(' |         |')
-print(' _---------_')
-print('| |  ===  | |')
-print('| |   o   | |')
-print(' ||   o   ||')
-print(' ||-------||')
-print('|$|\_____/|$|')
-print('/=\  /=\  /=\ ')
-print('[]   []   []')
+class prueba():
+    def __init__(self, valor) -> None:
+        self._x = valor
+    
 
-farenheit = int(input('Dame el valor de los farenhaits: '))
-grados = round(((farenheit - 32) * 5/9), 0)
-print(f'Los farenhait a grados son: {grados} C')
-grados = int(input('Dame el valor de los grados: '))
-farenheit = round(((grados * 9/5) + 32), 0)
-print(f'Los grados a farenhait son: {farenheit} F')
+    def getx(self):
+        return self._x
+    x = property(getx)
+
+
+xd = prueba(5)
+print(xd.getx())
