@@ -13,7 +13,7 @@ class Persona():
     # comporte como un atributo. se usa parta obtener un atributo encapsulado
     @property
     def nombre(self):
-        print('Llamando a Get')
+        # print('Llamando a Get')
         return self._nombre
     
     # Y para Set usamos Nombre_Del_Atributo.setter, esto hara lo mismo que property, hacer que un metodo se interprete como un atributo, lo cual
@@ -25,11 +25,11 @@ class Persona():
 
     @property
     def apellido(self):
-        return self.__apellido
+        return self._apellido
     
     @apellido.setter
     def apellido(self, nuevo_apellido):
-        self.__apellido = nuevo_apellido
+        self._apellido = nuevo_apellido
     
 
     @property
@@ -46,6 +46,9 @@ class Persona():
     def mostrar_detalles(self):
         # Podemos acceder a los atributos con _ aca ya que estamos dentro de la clase, lo ideal es NO hacerlo afuera
         print(f'Nombre: {self._nombre}, Apellido: {self._apellido}, Edad: {self._edad}.')
+    
+    def __str__(self) -> str:
+        return f'{self._nombre} {self._apellido} {self._edad}'
 
 
 if __name__ == '__main__':
@@ -64,8 +67,8 @@ if __name__ == '__main__':
     La forma para que UNICAMENTE el atributo sea modificado dentro de la case pero NO afuera de esta es colocarle '__' antes del nombre del atributo
     asi, el atributo no es modificable afuera de la clase. Esta es una anotacion que no se usa tanto, por lo general solo se usa el '_'
     '''
-    persona.__apellido = 'Gallego'
-    persona.mostrar_detalles()
+    # persona. = 'Gallego'
+    # persona.mostrar_detalles()
     # Nombre: Sebas, Apellido: Robles, Edad: 19
 
 

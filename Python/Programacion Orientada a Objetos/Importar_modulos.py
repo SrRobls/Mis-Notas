@@ -34,10 +34,11 @@ Nombre: Natalia, Apellido: Gomez, Edad: 25.
 # if __name__ == '__main__':
 #    ...
 # Una vez puesto eso en nuestro archimo del modulo que importado, ahora solo mostrara el codigo que creao aca
-print('Creacion de Objetos'.center(50, '-'))
-natalia = Persona('Natalia', 'Gomez', 25)
-natalia.mostrar_detalles()
-# Nombre: Natalia, Apellido: Gomez, Edad: 25.
-print('Eliminacion de Objetos')
-del natalia
-# El Objeto fue Eliminado: Natalia Gomez
+if __name__ == '__main__':
+    print('Creacion de Objetos'.center(50, '-'))
+    natalia = Persona('Natalia', 'Gomez', 25)
+    natalia.mostrar_detalles()
+    # Nombre: Natalia, Apellido: Gomez, Edad: 25.
+    print('Eliminacion de Objetos')
+    del natalia
+    # El Objeto fue Eliminado: Natalia Gomez
