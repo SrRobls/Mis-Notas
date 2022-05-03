@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo FlexBox</title>
+    <style>
+        *,
+        *::after,
+        *::before{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: beige;
+        }
+        .containers{
+            background-color: #333;
+            height: 300px;
+            /* Con display flex lo que haces es a linear los elementos de un contenedor en una solo linea.*/
+            display: flex;
+            /* Tambien esta con la propiedad inline-flex que hace los contenedores con esta propiedad se coloquen juntos en linea tambien
+            Podemos verlo tambien como si convirtiera un contenedor de bloque a linea*/
+            /* display: inline-flex; */
+            /* Tambien podemos cambair la direccion de los elementos del contenedor flex */
+            /* con row es el que viene po defecto, coloca los elmentos en linea dentro del contenedor, si hacemos row-reverse entonces 
+            los elementos se alinea de forma inversa, (por ejemplo notra que no se cimenza desde la parte maz izquierda si no desde la as derecha)*/
+            flex-direction: row;
+            flex-direction: row-reverse;
+            /* Tambien existe column y column-reverse lo que hace column es que los elementos no se alineen si no que se coloquen uno abajo 
+            de la otra (Notar que al hacer esto con una cantidad delementos que  hace que  se salga del contedor, esto lo hacemos envolvien 
+            el contendor en los elementos, es decir, usamos wrap) y column-reverse hace esto pero en forma alrevez (Notar que ya no se comienza 
+            desde arriba si no desde abajo)*/
+            flex-direction: column;
+            /* flex-direction: column-reverse; */
+            /* podemos hacer que los elmentos vivan o se acomoden por si solos solamente dentro de su contenedor, es decir, estas
+             se acomodan por si solas y no se salen si las dimesiones del contendor no es suficiente, como tambien para que se acomoden 
+             segun las dimensiones de los elmentos, para esto usamos wrap flex-wrap: nowrap es el que viene por defecto, para envolver los 
+             elementos con el contendro es con flex-wrap: nowrap */
+            flex-wrap: nowrap;
+            flex-wrap: wrap;
+            /* Tambien temenos a wrap-reverse que es como aplicar row-reverse*/
+            /* flex-wrap: wrap-reverse; */
+            /* tambien podemos aplicar estas propiedades en una linea, para esto usamos flex-flow: propiedad flex-directio || propiedad flex-wrap */
+            flex-flow: row wrap;
+
+            /*Ahora veremos la propiedad para dar justificacion al contenido (siempre y cuabdo hayya el espacio necesario), usamos 
+            justify-content, su valor por defectoes flex-start */
+            justify-content: flex-start;
+            /* usamos flex-end para justificarlo en la pasrte mas derecha del contenedor (ojo no confundir con row-reverse) */
+            justify-content: flex-end;
+            /* Usamos center para centrar el contenido */
+            justify-content: center;
+            /* Usmos space-between para justificar el contendo de tal forma que sea proporcional eh cuanto al espacio sobrante pero sin tomar 
+            en cuanta los bordes*/
+            justify-content: space-between;
+            /* Usmos space-around para justificar el contendo de tal forma que sea proporcional eh cuanto al espacio sobrante pero si tiene 
+            en cuanta a los bordes pero el espacio para los bordes es la mitad del espacio proporcional de los elementos*/
+            justify-content: space-around;
+            /* Usmos space-around para justificar el contendo de tal forma que sea proporcional eh cuanto al espacio sobrante pero si tiene 
+            en cuanta a los bordes por igual (es decir el espacio de estos entre los elementis va a ser igua al espacio proporcional entre los elementos) */
+            justify-content: space-evenly;
+
+            /* TENER MUY EN CUENTA, estas propiedades de justificacio se aplican dependiendo al eje principal (row -> eje x o column -> eje) */
+        }   
+        .item{
+            border: medium solid red;
+            background-color: #666;
+            width: 20%;
+            height: 20%;
+        }
+    </style>
+</head>
+<body>
+    <section class="containers">
+        <article class="item">Flex item 1</article>
+        <article class="item">Flex item 2</article>
+        <article class="item">Flex item 3</article>
+    </section>
+    <br>
+    <section class="containers">
+        <article class="item">Flex item 1</article>
+        <article class="item">Flex item 2</article>
+        <article class="item">Flex item 3</article>
+    </section>
+    <br>
+    <section class="containers">
+        <article class="item">Flex item 1</article>
+        <article class="item">Flex item 2</article>
+        <article class="item">Flex item 3</article>
+        <article class="item">Flex item 4</article>
+        <article class="item">Flex item 5</article>
+        <article class="item">Flex item 6</article>
+        <article class="item">Flex item 7</article>
+        <article class="item">Flex item 8</article>
+        <article class="item">Flex item 9</article>
+        <article class="item">Flex item 10</article>
+        <article class="item">Flex item 11</article>
+        <article class="item">Flex item 12</article>
+        <article class="item">Flex item 13</article>
+        <article class="item">Flex item 14</article>
+        <article class="item">Flex item 15</article>
+        <article class="item">Flex item 16</article>
+        <article class="item">Flex item 17</article>
+        <article class="item">Flex item 18</article>
+        <article class="item">Flex item 19</article>
+        <article class="item">Flex item 20</article>
+    </section>
+
+</body>
+</html>
