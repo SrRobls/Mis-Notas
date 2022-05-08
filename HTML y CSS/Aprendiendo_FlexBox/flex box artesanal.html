@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Artesanal</title>
+    <style>
+        /* Para que los bordes comiencen desde la caja */
+        *,
+        *::after,
+        *::before{
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: antiquewhite;
+        }
+
+        .container{
+            margin: auto;
+            max-width: 1280px;
+            background-color: bisque;
+            border: thin solid black;
+        }
+
+        /* Hacemos que el contendor que tiene los items sea de tipo flexbox y que la direccion sea row y considere las dimensiones de lo elemntos
+        de tal forma que se acomoden dentro del flexbox-container, es decir, usamos wrap */
+        .flexbox-container{
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .items{
+            border: thin solid #ccc;
+            flex: 0 0 100%;
+        }
+        
+        /* Lo que hace @media en este caso es aplicar estilos dado el valor de width de la pagina*/
+        @media (min-width: 576px){
+            .items{
+                flex: 0 0 50%;
+            }
+        }
+
+        @media (min-width: 768px){
+            .items{
+                flex: 0 0 33.33333333333333%;
+            }
+        }
+
+        @media (min-width: 992px){
+            .items{
+                flex: 0 0 25%;
+            }
+        }
+
+        @media (min-width: 1080px){
+            .items{
+                flex: 0 0 16.66666666%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Flex Box Artesanal Responsivo</h1>
+    <div class="container">
+        <section class="flexbox-container">
+            <article class="items">Item 1</article>
+            <article class="items">Item 2</article>
+            <article class="items">Item 3</article>
+            <article class="items">Item 4</article>
+            <article class="items">Item 5</article>
+            <article class="items">Item 6</article>
+            <article class="items">Item 7</article>
+            <article class="items">Item 8</article>
+            <article class="items">Item 9</article>
+            <article class="items">Item 10</article>
+            <article class="items">Item 11</article>
+            <article class="items">Item 12</article>
+            <article class="items">Item 13</article>
+            <article class="items">Item 14</article>
+            <article class="items">Item 15</article>
+            <article class="items">Item 16</article>
+            <article class="items">Item 17</article>
+            <article class="items">Item 18</article>
+            <article class="items">Item 19</article>
+        </section>
+    </div>
+</body>
+</html>

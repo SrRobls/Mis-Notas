@@ -61,14 +61,122 @@
             en cuanta a los bordes por igual (es decir el espacio de estos entre los elementis va a ser igua al espacio proporcional entre los elementos) */
             justify-content: space-evenly;
 
-            /* TENER MUY EN CUENTA, estas propiedades de justificacio se aplican dependiendo al eje principal (row -> eje x o column -> eje) */
+            /* TENER MUY EN CUENTA, estas propiedades de justificacion se aplican dependiendo al eje principal (row -> eje x o column -> eje) */
+            justify-content: flex-start;
+            /* Tenemos a align-items que este trabaja pero con el eje segundario (row -> el eje segundario seria y, column -> el eje segundario seria x) */
+            /* stretch lo que hacemos es a largar a lo maximo del eje segundaria a lo elementos del contenedor. este es el que viene por defecto */
+            align-items: stretch;
+            /* flex star lo que hace es colocar al principio los elementoas segun el eje segundario */
+            align-items:flex-start;
+            /* flex end lo que hace es colocar a lo mas abajo a los elementos segun el eje segundario */
+            align-items: flex-end;
+            /* Centra los elementos segun ele eje segundario */
+            align-items: center;
+            /* baseline hace que los elementos se alineen con respecto a una linea imaginaria, (es emjor ver una image para notar esto) */
+            /* align-items: baseline; */
+
+            /* viendo esto pero ahora seindo el eje pirncipa y y el eje segundario x*/
+            flex-flow: column wrap;
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: baseline;
+            align-items: center;
+
+
+            /* Tambien tenemos a align-content que funciona como justify-content pero align-content trabaja con el eje segundario y funciona cuando
+            flex-wrap NO es nowrap*/
+            flex-flow: row wrap;
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-between;
+            align-content: space-around;
+            align-content: space-evenly;
+            /* NOTAR que la propidades son las mismas que las de justify-content pero aplicandoselas al eje segundario */
+
+            /* Ahoora veremos los atributos de los elementos/hijos, asi que reiniciamo todo por defecto para visualiarlo mejor */
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            align-content: flex-start;
+            /* Visualizaremos esto mejor en el primer containe, asi que cpolocamos muchos br para no visualizar los tros contenedores*/
         }   
         .item{
             border: medium solid red;
             background-color: #666;
-            width: 20%;
-            height: 20%;
+            /* width: 33.3%;
+            height: 100%; */
+            /* Cuando la caja flex box tenga espacio sobrante, es la  habilidad o el factor de crecer, el valor por defecto es 0. para
+            aplicar flex-grow, shrink y flex-basic es importante definir las dimensiones (al menos al cual se vaya a trabajar, width o height)
+            para que estos funcionen*/
+            flex-grow: 0;
+            /* Es decir si colocamos que el valor es 1, entonce el espacio espacio se dividira en tres y a cada uno de los elementos les
+            tocara x1 ese espacio y pues los tres son igual en cuanto a tamaño, PERO si hay un elemento hijo tiene un flex grow de 2 por ejemplo
+            entoces el espacio sobrante se divide en 4 y se reparte 1 a los otros elemetos y al elemento con flex-grow se les da 2 partes, otro ejemplo
+            si hay elementos con flex grow 1, otro con 4 y otro con 2 entonces elespacio sobrante se divide en 7 y al un elemento le corresponde 1,
+            a otr4 y a otr 2*/
+            /* flex-grow: 1; */
+            /* Tenemos a flex-shrink que es lo contrario a flex-grow, a medida que el espacio del contenedor disminuye podemos modificar el 
+            factor de decrecimiento de los elmentos o un elemento en particular (la idea los calculos son los mismos pero restando). el valor por
+            defecto es 1 y si colocamos 0 entonces loe elementos NUNCA decrecen*/
+            flex-shrink: 1;
+            /* Por ejemplos los tres elementos que tenemos mide de ancho 78.89 (siempre y cuando no estemos modificando su widht y height), es deir,
+            que su contenedor debe medir 78.89x2 = 236.67 para que no se empequeñen, pero si reducimosel con tenedor con un widht a 200 y el 
+            flex-shrink del elemto 1 y 3 es de 1 pero el del 3 es de 2, entonces
+            
+            lo que se le reduce es 236.67 - 200 = 36.67/4 = 9.17
+            elemento1 -> 78.89 - 9.17 = 69.72
+            elemento2 -> 78.89 - (9.17*2) = 60.55
+            elemento3 -> 78.89 - 9.17 = 69.72
+            */
+            /* Podemos usar un shorthand para aplicar las propiedades de flex-grow y flex-shrink */
+            flex: 0 1 auto; /* el primero hacer referencia a grow, el segun a shrink, el el tercer parametro hace referencia a flex-basic  */
+            /* flex-basic es como el width de los elementos, con esto podemos modificar ese valor, por ejemplo si colocamos flex-basic: auto == width
+            o flex-basic: 50% == width: 50% de los elementos */
+
+            /* Existe una propiedad que se llama order que se lo podemos aplicar a los elementos de un contendor o un elelemeto en particular, 
+            lo que hara es que dependiendo del valor quwe le damos, se ordenaran los elementos (segun la direccion de floex-direction), el que viene por defecto es 0. se aceptan valores
+            negativos, y entra mas menor sea entonce su orden va antes */
+            order: 0;
+
+            /* y por ultimo tambin podemos usar align-self para alinear a un elemento por si sola (pues como dice su nombre alinear-tu mismo) 
+            recordemos que align trabaja con el eje segundario, si el eje principal es x entonces el segundario es el y*/
         }
+
+        .item:nth-child(1){
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            order: 1;
+        }
+
+        .item:nth-child(2){
+            /* flex-grow: 4; */
+            /* flex-shrink: 3; */
+            order: 0;
+            align-self: center;
+        }
+
+        .item:nth-child(3){
+            /* flex-grow: 2; */
+            /* flex-shrink: 1; */
+            order: -2;
+        }
+
+        .item:nth-child(4){
+            /* flex-grow: 2; */
+            /* flex-shrink: 1; */
+            order: 0;
+        }
+
+        .item:nth-child(5){
+            /* flex-grow: 2; */
+            /* flex-shrink: 1; */
+            order: 0;
+            align-self: flex-end;
+        }
+
+        /* Notar como cambia el orden segun order */
     </style>
 </head>
 <body>
@@ -76,8 +184,10 @@
         <article class="item">Flex item 1</article>
         <article class="item">Flex item 2</article>
         <article class="item">Flex item 3</article>
+        <article class="item">Flex item 4</article>
+        <article class="item">Flex item 5</article>
     </section>
-    <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <section class="containers">
         <article class="item">Flex item 1</article>
         <article class="item">Flex item 2</article>

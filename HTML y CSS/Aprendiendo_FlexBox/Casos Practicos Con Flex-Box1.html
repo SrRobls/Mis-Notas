@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casos PractIcos con FlexBox 1</title>
+
+    <style>
+        *,
+        *::after,
+        *::before{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        /* convertimos a flex al body pues es el contendeor de todos los elementos */
+        body{
+            display: flex;
+            flex-flow: column wrap;
+            min-height: 100vh;
+            min-width: 100vh;
+        }
+
+        header, footer{
+            background-color: black;
+            color: white;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        main{
+            /* Hacemos que el main tengra un crecimiento de 1 para que este ocupe siempre la mayor parte de la pantalla, pues el grow de header y footer
+            es de 0 en las dimensiones del body */
+            flex-grow: 1;
+        }
+
+        /* Hacemos que header sea de tipo flex pero en columna y este centrado */
+        header{
+            display: flex;
+            flex-flow: column wrap;
+            align-content: center;
+        }
+
+        /* A las listas del header le quitamos el estilos de los puntos */
+        ul li{
+            list-style-type: none;
+        }
+
+        /* le damos las propiedades a nuestra imagen heroe y lo convertimos a flex y alineamos el texto */
+        .hero-image{
+            /* Algunas modificaciones mas la imagen */
+            min-height: 100vh;
+            background-image: url(http://placeimg.com/1600/720/tech);
+            color: #fff;
+            background-repeat: no-repeat;
+
+            /* alineamos */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* para el tamaño de letra usamos las unidades vw para que esta se adapte segun el tamaño de la pantalla */
+            font-size: 3vw;
+        }
+
+        /* Modificamos la opacidad del contenedor div de tal froma que notemos el texto*/
+        .hero-image div{
+            background-color: rgba(0, 0, 0, .55);
+        }
+
+        /* Cuando el ancho de la pantalla sea de 800 px hacemos que el header pase a row, con espaciados entre  "logo" y las listas
+        tambien convertivos al contennedor de la las listas ul a flex y lo pasabe a row wrap y las listas tengan un pading entre ellas de 15px
+        asi hacemos una navegacion responsiva*/
+        @media (min-width: 800px) {
+            header{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-around;
+            }
+
+            ul{
+                display: flex;
+                flex-flow: row wrap;
+            }
+
+            li{
+                padding: 15px;
+            };
+
+            .hero-image{
+                font-size: 5px;
+            }
+
+            .flex-container-reverse{
+                flex-flow: row-reverse wrap;
+            }
+        }
+
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .flex-container{
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .flex-item{
+            flex: 0 0 50%;
+        }
+
+        .flex-container p{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Notemos que body es el contenedor de todos, entonces a este contenedor es el que tenemos quye pasarlo a tipo flex -->
+
+    <header>
+        <h2>Logo</h2>
+        <nav class="navegacion">
+            <ul>
+                <li><a href="#">Seccion 1</a></li>
+                <li><a href="#">Seccion 2</a></li>
+                <li><a href="#">Seccion 3</a></li>
+                <li><a href="#">Seccion 4</a></li>
+            </ul>
+        </nav>      
+    </header>
+
+    <main>
+        <h2>Inofrmacion</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, corporis aperiam accusantium quam nesciunt, soluta similique, illum fugiat dolorum laudantium reprehenderit iusto rerum nisi eligendi delectus debitis deserunt eius nemo!</p>
+        <article class="hero-image">
+            <!-- debemos meterla dentro de u div ya que al colorcar la imagen este se va a sobreponer sobre le fondo por tanto debemos ponerle
+            una opacidda para que dad los colores de la imagen el texto si o si se vea-->
+            <div>
+                <h2>Flexbox es Bacano Ve</h2>
+            </div>
+        </article>
+        <!-- parte 2 -->
+        <section class="flex-container">
+            <article class="flex-item">
+                <h2>Titulo</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quisquam, minus veritatis doloribus eum mollitia deleniti libero provident nam perspiciatis! Consequatur neque beatae ad ipsa nobis officia labore deserunt itaque?</p>
+            </article>
+            <article class="flex-item">
+                <img src="http://placeimg.com/400/400/people" alt="imagen randon">
+            </article>
+        </section>
+
+        <section class="flex-container flex-container-reverse">
+            <article class="flex-item">
+                <h2>Titulo</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quisquam, minus veritatis doloribus eum mollitia deleniti libero provident nam perspiciatis! Consequatur neque beatae ad ipsa nobis officia labore deserunt itaque?</p>
+            </article>
+            <article class="flex-item">
+                <img src="http://placeimg.com/400/400/tech" alt="imagen randon">
+            </article>
+        </section>
+
+        <section class="flex-container">
+            <article class="flex-item">
+                <h2>Titulo</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quisquam, minus veritatis doloribus eum mollitia deleniti libero provident nam perspiciatis! Consequatur neque beatae ad ipsa nobis officia labore deserunt itaque?</p>
+            </article>
+            <article class="flex-item">
+                <img src="http://placeimg.com/400/400/animals" alt="imagen randon">
+            </article>
+        </section>
+
+        <section class="flex-container flex-container-reverse">
+            <article class="flex-item">
+                <h2>Titulo</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est quisquam, minus veritatis doloribus eum mollitia deleniti libero provident nam perspiciatis! Consequatur neque beatae ad ipsa nobis officia labore deserunt itaque?</p>
+            </article>
+            <article class="flex-item">
+                <img src="http://placeimg.com/400/400/arch" alt="imagen randon">
+            </article>
+        </section>
+               
+               
+    </main>
+
+    <footer>
+        <h2>Pie de Pagina</h2>
+    </footer>
+</body>
+</html>
