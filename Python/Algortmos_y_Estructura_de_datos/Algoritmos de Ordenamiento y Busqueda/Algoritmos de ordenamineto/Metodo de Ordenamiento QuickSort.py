@@ -182,4 +182,4 @@ def QuickSort(lista, menor, mayor):
 
 QuickSort(l_ordenar, 0, len(l_ordenar)-1)
 print(l_ordenar)
-# [2, 3, 5, 7, 7, 4, 8, 9, 10, 12, 15]
+# [3, 3, 3, 4, 4, 6, 8, 23, 45, 46, 54, 57, 343, 456, 567, 747, 6578]

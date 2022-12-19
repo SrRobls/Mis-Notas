@@ -1,0 +1,11 @@
+tarifa = int(max(round(float(input()) ,-2), 0))
+horasTrabajadas = int(max(round(float(input()),0), 0))
+pago = 0
+if horasTrabajadas <= 45:
+    pago = int(tarifa * horasTrabajadas)
+elif horasTrabajadas >= 46:
+    pago = 45*tarifa
+    hExtra = horasTrabajadas - 45
+    extra = int(((hExtra*tarifa)*150)/100)
+    pago += extra
+print(f'$ {pago}')

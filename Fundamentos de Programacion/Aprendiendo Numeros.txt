@@ -1,0 +1,9 @@
+N = min(max(int(input()), 0), 10000) # pedimos un numeros entre 0 y 10000
+listaNumeros =[1, 2, 3, 4, 5] # la lista de los 5 numeros que quremos saber cuantas veces aparece
+apariciones = [] # apariciones de los 5 numeros
+for i in range(N):
+    num = int(input()) # pedimos un numero
+    if num in listaNumeros: # y comprobamos si ese numero es uno de los numeros entre 1 y 5
+        apariciones.append(num) # si si es, agregamos ese numero en la lista apariciones
+for x in listaNumeros: # por cada numero de los que queremos saber cuantas veces a salido
+    print(f'{x}: {apariciones.count(x)}') # lo imprimos con su numero de apariciones guardadas es la lista apariciones

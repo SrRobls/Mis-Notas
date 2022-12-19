@@ -1,0 +1,20 @@
+#Lucas
+def serieLucas(A,B):
+    cont = 0
+    c1 = 2
+    c2 = 1
+    c3 = 0
+    while c3 != A:
+        c3 = c1 + c2
+        c1 = c2
+        c2 = c3
+        if c3 > A:
+            break
+        elif c3 == A:
+            while c3 <= B:
+                cont += 1
+                c3 = c1 + c2
+                c1 = c2
+                c2 = c3
+    print(cont)
+serieLucas(int(input()), int(input()))

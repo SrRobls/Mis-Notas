@@ -1,0 +1,11 @@
+totalFichas = min(max(int(input()), 4), 10000)
+fichas = []
+for i in range(1, totalFichas): #ya viene por defecto el  totalFichas-1
+    fichas.append(int(input())) #Agregamos los numeros de las fichas en esta lista
+fichas.sort() #organizamos de menor a mayor, esto nos sirve para hecer la comparacion y ver que ficha es la que falta
+for i in range(1, totalFichas+1): #aqui tomasmos totalfichas+1 porque necesitamos saber que ficha del 1 al totalfichas nos falta
+    if i == totalFichas: # si el iterador i llega igual al total ficha, significa que la ficha que falta es esa ultima
+        print(f'La ficha faltante es la {i}')
+    elif fichas[i-1] != i: #Si no es el caso, significa que en algun moemento en el iterador i sera igual a la fica qu falta entre 4 y totalfichas-1
+        print(f'La ficha faltante es la {i}')
+        break

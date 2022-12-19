@@ -1,0 +1,29 @@
+x = max(round(int(input()), -3), 1000)
+x = min(x, 1000000)
+while x:
+    if x / 50000 >= 1:
+        billetes = x // 50000
+        print(f'{billetes} de $50000')
+        x -= (billetes * 50000)
+    elif x / 20000 >= 1:
+        billetes = x // 20000
+        print(f'{billetes} de $20000')
+        x -= (billetes * 20000)
+    elif x / 10000 >= 1:
+        billetes = x // 10000
+        print(f'{billetes} de $10000')
+        x -= (billetes * 10000)
+    elif x / 5000 >= 1:
+        billetes = x // 5000
+        print(f'{billetes} de $5000')
+        x -= (billetes * 5000)
+    elif x / 2000 >= 1:
+        billetes = x // 2000
+        print(f'{billetes} de $2000')
+        x -= (billetes * 2000)
+    elif x / 1000 >= 1:
+        billetes = x // 1000
+        print(f'{billetes} de $1000')
+        x -= (billetes * 1000)
+    else:
+        break

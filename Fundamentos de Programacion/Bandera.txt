@@ -1,0 +1,25 @@
+lado = max(int(input()), 3)
+height = max(int(input()), 3)
+mediaLado = 0
+mediaHeight = 0
+#La mitad del lado:
+for i in range(1, lado+1):
+    mediaLado += i
+mediaLado /= lado
+#mitad de la altura:
+for i in range(1, height+1):
+    mediaHeight += i
+mediaHeight /= height
+#Imprimir la Bandera:
+for i in range(1,height+1): #usamos range(1,height+1) para que i pueda tomar un valor igual a mediaheight
+    if i == mediaHeight:
+        for h in range(lado): #para dibujar la mitad de la bandera de '+' en relacion a la altura
+            print('+', end='')
+        print('') #salto de linea
+    else:
+        for l in range(1, lado+1): #usamos range(1,lado+1) para que i pueda tomar un valor igual a medialado
+            if l == mediaLado:
+                print('+', end='') #para dibujar la mitad de la bandera de '+' en relacion al lado
+            else:
+                print('0', end='') #imprimir un '0' sin salto de linea
+        print('') #salto de linea

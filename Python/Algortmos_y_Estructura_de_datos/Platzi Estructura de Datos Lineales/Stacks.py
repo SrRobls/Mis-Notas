@@ -1,5 +1,5 @@
 # Los stacks (o pilas) son colecciones lineales basados en arrays o linked list, su principio fundamentales es LIFO (Last-In-First-Out) el primer elemento
-# en llegar sera el ultimo en slair o el ultimo elemento en entrar sera el el primero en salir y tiene dirversoso metodos que podemos 
+# en llegar sera el ultimo en slair o el ultimo elemento en entrar sera el el primero en salir y tiene dirversos metodos que podemos 
 # usar si lo requeremos en inclusive pordriamos crear otros metodos.
 
 # Creemos nuestro stack
@@ -79,7 +79,6 @@ class Stack(object):
         string = ''
         if self.size == 0:
             string = 'The Stack is Empty'
-
         else:
             while top:
                 if top.siguiente == None:

@@ -1,0 +1,21 @@
+partidos = min(max(int(input()), 0), 500)
+golBallenota = []
+golMadril = []
+puntosBallenota = 0
+puntosMadril = 0
+
+for i in range(partidos):
+    golBallenota.append(int(input()))
+for i in range(partidos):
+    golMadril.append(int(input()))
+
+for i in range(partidos):
+    if golBallenota[i] > golMadril[i]:
+        puntosBallenota += 2
+    elif golMadril[i] > golBallenota[i]:
+        puntosMadril += 2
+    else:
+        puntosMadril += 1
+        puntosBallenota += 1
+print(f'Ballenota Futbol Club: {puntosBallenota}')
+print(f'Real Mandril: {puntosMadril}')

@@ -1,0 +1,18 @@
+c = int(input())
+resultados = []
+for i in range(c):
+    placas = input()
+    cont = 999
+    listPlacas = placas.split()
+    placaPrincipal = listPlacas[0]
+    placaPrincipal = int(placaPrincipal[-3:])
+    for placa in listPlacas:
+        numero = int(placa[-3:])
+        if numero <= cont:
+            cont = numero
+    if placaPrincipal == cont:
+        resultados.append('Mi cacharrito es el mas viejo de todos los autos ;D')
+    else:
+        resultados.append('Al menos otro auto es mas viejo que mi cacharrito :(')
+for resultado in resultados:
+    print(resultado)

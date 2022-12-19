@@ -1,0 +1,19 @@
+hora = min(12, (int(input())))
+minutos = min(59, (int(input())))
+horario = input()
+if hora <= 0: hora = 1
+if minutos < 0: minutos = 0
+if horario == 'pm'and hora != 12:
+    totalMinutos = (hora*60) + minutos
+    minutisFaltantes = 720 - totalMinutos
+    print(f'Faltan {minutisFaltantes} para las 12')
+elif horario == 'pm' and hora == 12:
+    minutisFaltantes = 720 - minutos
+    print(f'Faltan {minutisFaltantes} para las 12')
+elif horario == 'am' and hora != 12:
+    totalMinutos = (hora * 60) + minutos
+    minutisFaltantes = 1440 - totalMinutos
+    print(f'Faltan {minutisFaltantes} para las 12')
+elif horario == 'am' and hora == 12:
+    minutisFaltantes = 1440 - minutos
+    print(f'Faltan {minutisFaltantes} para las 12')

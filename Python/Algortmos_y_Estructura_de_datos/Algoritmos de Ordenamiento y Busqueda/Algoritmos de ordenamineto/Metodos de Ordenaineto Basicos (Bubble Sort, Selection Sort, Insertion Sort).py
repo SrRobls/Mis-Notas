@@ -2,7 +2,7 @@
 '''
 METODO BURBUJA:
 
-Basicamente el metodo burbuja trata de ordenar una lista iterando por cada elemnto e ir preguntando si el siguiente es menor o mayor, y
+Basicamente el metodo burbuja trata de ordenar una lista iterando por cada elemento e ir preguntando si el siguiente es menor o mayor, y
 dependiendo de como queremos ordenarlo hacemos el respectivo cambio entre esos dos elemntos.
 
 Lo que hara este algoritmo es basicamente:

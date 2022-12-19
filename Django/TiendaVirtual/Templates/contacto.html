@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+</head>
+<body>
+    <form action="/contacto/" method="post">{% csrf_token %}
+        <label for="asunto">
+            Asunto: 
+        </label>
+        <input id="asunto" type="text" name="Asunto" required><br>
+        <label for="correo_tal">
+            Correo: 
+        </label>
+        <input type="email" name="correo" id="correo_tal" required><br>
+        <label for="mensaje_id">
+            Mensaje: 
+        </label>
+        <textarea name="mensaje" id="mensaje_id" cols="30" rows="10" required></textarea><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

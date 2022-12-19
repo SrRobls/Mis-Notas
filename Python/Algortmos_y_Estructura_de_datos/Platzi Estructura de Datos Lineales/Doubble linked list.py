@@ -9,7 +9,7 @@ class Nodo(object):
         self.valor = valor
         self.siguiente = siguiente
 
-# creamos nuestra clase de DoubbleLinkedList y le netemos como herenecia a nuestra clase nodo (para tener de herencoa los atributos valor y siguiente) 
+# creamos nuestra clase de DoubbleLinkedList y le netemos como herenecia a nuestra clase nodo (para tener de herencia los atributos valor y siguiente) 
 class DoubbleLinkedList(Nodo):
     def __init__(self, valor, previous = None, siguiente = None):
         # Aca llamamos a los atrubutos de Nodo como herencia
@@ -17,7 +17,7 @@ class DoubbleLinkedList(Nodo):
         # A prevuis no lo llamamos de Nodo porque Nodo no tiene este atribito. el atributo previus es el que apuntara al nodo al nodo anterior
         self.previous = previous
 
-# Creamos nuestra DoubbleLinkedList con un el primer nodo con valor 1, y luego lo rellenamos de valor de tal formaquer quede del 1 al 5. 
+# Creamos nuestra DoubbleLinkedList con un el primer nodo con valor 1, y luego lo rellenamos de valor de tal forma que quede del 1 al 5. 
 head = DoubbleLinkedList(1)
 tail = head
 for i in range(2, 6):

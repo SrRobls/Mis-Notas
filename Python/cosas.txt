@@ -1,0 +1,20 @@
+def AutoPartes(ventas: list):
+    informacion_tuplas = {}
+    for i in range(len(ventas)):
+        informacion_tuplas[f'Registro #{i+1}'] = ventas[i]
+    
+    return informacion_tuplas
+
+def consultaRegistro(ventas, IdProducto):
+    result_string, verificacion_si_hay = '', False
+    for value in ventas.values():
+        if IdProducto ==  value[0]:
+            result_string += f"Producto consultado : {str(IdProducto)} Descripción {value[1]} #Parte {value[2]} Cantidad vendida {str(value[3])} Stock {str(value[4])} Comprador {value[5]} Documento {str(value[6])} Fecha Venta {value[7]}\n"
+            verificacion_si_hay = True
+    if not verificacion_si_hay:
+        result_string += "No hay registro de venta de ese producto"
+    return result_string
+
+print(consultaRegistro([(2001,'rosca', 'PT29872',2,45,'Luis Molero',3456,'12/06/2020'), (2010,'bujía', 'MS9512',4,15,'Carlos Rondon',1256,'12/06/2020'), (2010,'bujía', 'ER6523',9,36,'Pedro Montes',1243,'12/06/2020'), (3578,'tijera', 'QW8523',1,128,'Pedro Faria',1456,'12/06/2020'), (9251,'piñón', 'EN5698',2,8,'Juan Peña',565,'12/06/2020')], 2010))
+
+

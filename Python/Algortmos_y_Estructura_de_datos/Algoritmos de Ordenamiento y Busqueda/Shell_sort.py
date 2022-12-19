@@ -9,6 +9,14 @@ https://www.youtube.com/watch?v=cQlEIdW2DU0&t=908s
 
 
 numeros = [23, 63, 12, 62, 21, 12, 35, 132, 98, 121, 32]
+# Intervalo: len(numeros)//2 = 5
+# [12, 63, 12, 62, 21, 23, 35, 132, 98, 121, 32]
+# [12, 35, 12, 62, 21, 23, 63, 132, 98, 121, 32]
+# intervalo 5//2 = 2
+# [12, 23, 12, 32, 21, 35, 63, 62, 98, 121, 132]
+# intervalo 2//2 = 1
+# [12, 12, 21, 23, 32, 35, 62, 63, 98, 121, 132]
+
 
 def shell_sort(lista):
     # dos variables importantes donde se guaradara el largo del la lista y el intervalo (que en un principio es la mitad del largo de la lista)

@@ -1,0 +1,23 @@
+text = open('mensaje.txt', 'r')
+
+
+def encriptador(texto):
+    lineas = []
+    resultados = []
+    for renglon  in texto:
+        lineas.append(renglon)
+    for linea in lineas:
+        linea = linea.replace('\n', '')
+        caracteres = list(linea)
+        solucion = list(linea)
+        N = len(caracteres) - 1
+        for i in range(N+1): #Usamos N+1 para tomar todos los valores
+            solucion[i] = caracteres[(N)-i]
+        solucion = ''.join(solucion) #La Funcion 'str'.join(lista o  cadena de texto) me permite convertir o mostrar por pantalla cada uno de los valores/caracteres que correspondn a los indices de la lista o cadena de texto separa por el 'str'
+        resultados.append(solucion)
+    return resultados
+
+
+for resultado in encriptador(text):
+    print(resultado)
+text.close()

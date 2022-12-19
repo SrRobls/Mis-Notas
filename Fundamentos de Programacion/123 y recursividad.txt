@@ -1,0 +1,9 @@
+def funcion(x):
+    if x % 123 == 0:
+        return 0
+    else:
+        return 1 + funcion(x + 23)
+
+totalnum = int(input())
+for i in range(totalnum):
+    print(funcion(int(input())))

@@ -1,0 +1,15 @@
+contador = 0
+listaSalarios = []
+# recoletamos los salarios y los guardamos en la listaSalrios
+while True:
+    salario = int(input())
+    contador += 1
+    if contador <= 10000000 and salario != 0: #las restricciones
+        listaSalarios.append(salario)
+    else:
+        break
+listaSalarios.sort(reverse=True) #Ordenar de forma decreciente
+totalCiudadanos = len(listaSalarios) #Guradamos la cantidad total de ciudanos
+resultado = (listaSalarios[2] - listaSalarios[-3]) / (totalCiudadanos)**2 #tomas el segundo y el tercero de atars para adelante
+resultado = round(resultado, 2) #redondeamos a dos cifras decimales
+print(resultado)

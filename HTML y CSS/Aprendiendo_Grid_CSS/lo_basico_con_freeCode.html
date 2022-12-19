@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo CSS Grid</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+
+        h1{
+            background-color: aqua;
+            width: 100px;
+            margin: 0px auto;
+        }
+        .container-grid-2{
+            background-color: cadetblue;
+            width: 400px;
+            margin: auto;
+            /* Para definir que un contenedor sea groid debemos colocarle display: grid */
+            display: grid;
+
+            /* Ahora con grid-template-columns podemos definir la cantidad de columnas y el width de cada una de ellas. donde la cantidad de 
+            parametros es la cantidad de columnas y los valores de los parametros es el width de cada una respectivamente*/
+            /* Dos columnas  de 5 px de ancho */
+            grid-template-columns: 50px 50px ;
+            /* 3 columnas donde las anchuras de cada una son 50px, 150px y 75px  */
+            grid-template-columns: 50px 150px 75px;
+
+            /* Tambien con  grid-template-rows para definir la cantidad de filas y su altura en el contendor, funciona similar que lo 
+            enteriormente visto*/
+            /* Para dos columnas de 100px cada una */
+            grid-template-rows: 100px 100px;
+            /* Para tre columnas con 100px,  200px y 300px de altura respectivamnete */
+            /* grid-template-rows: 100px 200px 300px; */
+
+            /* Podemos separa entre columnas y filas usando grid-gap, dond se usa dos parametros el primero es la sepaacion entre filas/rows y 
+            el segun es la separacion entre columnas/columns */
+            grid-gap: 20px 25px;
+            /* Notar que se separanron respectivamente los valores dados */
+
+            /* Acomodemos un poco mejor las columnas y filas */
+            grid-template-columns: 80px 80px 80px;
+            grid-template-rows: 100px 100px 100px;
+            
+
+            /* Tenems una funcion que permite que un item hijo del contendor grid pueda tomar mas espacio ya sea en las columnas o filas, para entender
+            esto aconsejo mira la imagen row-lines_and_column-lines donde vemos que dependiendo de las columnas y filas estas estan divididas por 
+            lineas invisibles que las contienenn. asi si decimos que el item6 tome las lineas del 3 al 5 (3 / 5) en columnas entonces este tomara los espacio 
+            de esas columnas. esta funcion/es se llama/n es grid-column y grid-row*/
+            /* (Ver como le aplicamos esta propiedad a los items) */
+        }
+
+        .item1{
+            background-color: red;
+        }
+
+        .item2{
+            background-color: blue;
+        }
+
+        .item3{
+            background-color: green;
+            /* le pedimos que se expanda al espacio restante */
+            grid-column: 3/5;
+        }
+
+        .item4{
+            background-color: orange;
+            /* le pedimos que tome el espaci restante de las filas */
+            grid-row: 2 / 4;
+        }
+
+        .item5{
+            background-color: yellow;
+            /* le pedimos que tome el espaci restante de las filas */
+            grid-row: 2 / 4;
+        }
+
+        .item6{
+            background-color: red;
+            /* le pedimos que tome el espaci restante de las filas y en columnas */
+            grid-row: 2 / 4;
+            grid-column: 3 / 5;
+            
+        }
+
+        /* Notar como con grid-column y grid-row le cambiamos la disposicion de los itemns */
+
+        /* Contendor 2 */
+        .container-grid-3{
+            background-color: cornflowerblue;
+            display: grid;
+            width: 400px;
+            margin: 0px auto;
+            grid-template-columns: 80px 80px 80px;
+            grid-template-rows: 80px 80px 80px;
+            grid-gap: 20px 20px;
+
+            /* Tambien podemos justificar todos los elementos con justify-items para acomodar los elemntos DENTRO de su celda correspondiente
+             (recordems que esta propiedad trabaja con el eje principal que en grid siempre va a ser el eje x),pero los unicos valores son start, 
+             end y center.*/
+            justify-items: end;
+            justify-items: start;
+            justify-items: center;
+
+            /* Tambien podemos hacer que todos los itmes se alineen en el eje segundario DENTRO del su celda correspondiente, esto lo hacemos 
+            con align-items (recordemos que con align-items estamos trabajndo co  el eje segundario, y el grid siempre el eje segundaro sera y),
+            los valores son  start, end y center. */
+            align-items: end;
+            align-items: start;
+            align-items: center;
+
+            /* Por ultimo, podemos aplicar justify y align a los items individualmente con justify-self y align-self. por ejemplo ve que se 
+            lo aplicamos al item 3*/
+
+        }
+
+        .item1-2{
+            background-color: red;
+        }
+
+        .item2-2{
+            background-color: blue;
+        }
+
+        .item3-2{
+            background-color: green;
+            /* Le aplicamos justify-self y align-self a este item, note como es difeerente a los otros items */
+            justify-self: end;
+            align-self: start;
+            
+        }
+
+        .item4-2{
+            background-color: orange;
+            
+        }
+
+        .item5-2{
+            background-color: yellow;
+            
+        }
+
+        .item6-2{
+            background-color: red;
+        }
+
+        .container-grid-4{
+            background-color: cornflowerblue;
+            display: grid;
+            width: 400px;
+            margin: 0px auto;
+            /* Podemos definir de una vez como queremos organizar los itmens, esto lo podemos hacer con grid-template-areas como veremos a continuacion */
+            grid-template-areas: "header header header header"
+                                 "section content content content"
+                                 "section content content content"
+                                 "footer footer footer footer";
+            /* Definimos un header que ocupara toda la parte ancha de arriba (una fila), una section que ocupara 1 columna pero dos filas, 
+            un content que ocupa dos columnas y dos filas y por ultimo un footer que ocupa la ultima filaa y las tres columnas. ahora para 'dubujar'
+            esto, debemos darle una parte asignada a los items esto lo hacemos colocandole una propiedad  grid-area a los items (ver la propiedad dada
+            a los items)*/
+            /* Definamos sus columans y filas */
+            grid-template-columns: 100px 100px 100px 100px;
+            grid-template-rows: 80px 80px 80px 80px;
+
+        }
+
+        .item1-3{
+            background-color: red;
+            /* Le damos el header a este item */
+            grid-area: header;
+        }
+
+        .item2-3{
+            background-color: blue;
+            /* Le damos el section */
+            grid-area: section;
+        }
+
+        .item3-3{
+            /* le damos el content */
+            background-color: green;
+            grid-area: content;
+        }
+
+        .item4-3{
+            /* le damos el footer */
+            background-color: orange;
+            grid-area: footer;
+        }
+        /* Notar como cada uno de los items se acomodaron igual que el grid-template-areas cuando le damos la propiedad de grid-area y algunas 
+        de las secciones dadas en grid-template-areas*/
+
+    </style>
+</head>
+<body>
+    <h1>Parte 1</h1>
+    <div class="container-grid-2">
+        <section class="item1">
+            <h2>
+                1
+            </h2>
+        </section>
+        <section class="item2">
+            <h2>
+                2    
+            </h2>
+        </section>
+        <section class="item3">
+            <h2>
+                3
+            </h2>
+        </section>
+        <section class="item4">
+            <h2>
+                4
+            </h2>
+        </section>
+        <section class="item5">
+            <h2>
+                5
+            </h2>
+        </section>
+        <section class="item6">
+            <h2>
+                6
+            </h2>
+        </section>
+    </div>
+    <h1>Parte 2</h1>
+    <div class="container-grid-3">
+        <section class="item1-2">
+            <h2>
+                1
+            </h2>
+        </section>
+        <section class="item2-2">
+            <h2>
+                2    
+            </h2>
+        </section>
+        <section class="item3-2">
+            <h2>
+                3
+            </h2>
+        </section>
+        <section class="item4-2">
+            <h2>
+                4
+            </h2>
+        </section>
+        <section class="item5-2">
+            <h2>
+                5
+            </h2>
+        </section>
+        <section class="item6-2">
+            <h2>
+                6
+            </h2>
+        </section>
+    </div>
+    <h1>Parte 3</h1>
+    <div class="container-grid-4">
+        <section class="item1-3">
+            <h2>
+                1
+            </h2>
+        </section>
+        <section class="item2-3">
+            <h2>
+                2    
+            </h2>
+        </section>
+        <section class="item3-3">
+            <h2>
+                3
+            </h2>
+        </section>
+        <section class="item4-3">
+            <h2>
+                4
+            </h2>
+        </section>
+    </div>
+</body>
+</html>

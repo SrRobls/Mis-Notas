@@ -1,0 +1,16 @@
+miembros = int(input())
+partidas = int(input())
+ganadores = []
+maximaRepeticion = 0
+ganadoresMasRpetidos = []
+for i in range(partidas):
+    familiar = max(min(int(input()), miembros), 1)
+    ganadores.append(familiar)
+    if ganadores.count(familiar) > maximaRepeticion:
+        maximaRepeticion = ganadores.count(familiar)
+for i in range(1, miembros+1):
+    if ganadores.count(i) == maximaRepeticion:
+        ganadoresMasRpetidos.append(i)
+ganadoresMasRpetidos.sort()
+for i in ganadoresMasRpetidos:
+    print(i)

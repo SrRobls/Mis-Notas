@@ -1,0 +1,19 @@
+hora = min(12, (int(input())))
+minutos = min(59, (int(input())))
+if  hora == 11  and minutos != 0: #caso cuando hora == 11 (en el espejo )
+    hora = 12
+    minutos = 60 - minutos
+    print(f'{hora}:{minutos}')
+elif hora == 12 and minutos != 0: #caso cuando hora == 12 (en el espejo )
+    hora = 11
+    minutos = 60 - minutos
+    print(f'{hora}:{minutos}')
+elif hora == 12:
+     print(f'{hora}:{minutos}')
+elif minutos == 0: #caso Cuando son las y punto
+    hora = 12 - hora
+    print(f'{hora}:{minutos}')
+else:
+    hora = 12 - (hora + 1)
+    minutos = 60 - minutos
+    print(f'{hora}:{minutos}')

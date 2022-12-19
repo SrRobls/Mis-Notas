@@ -1,7 +1,6 @@
 # ahora crearemos nuestra clase linked list (singly linked list)
-# Pero necesitamos llamr a nustra clase de nodos para crear nodos
+# Pero necesitamos llamar a nuestra clase de nodos para crear nodos
 
-from locale import currency
 from nodos import Nodo
 
 class SinglyLinkedList(object):
@@ -38,7 +37,7 @@ class SinglyLinkedList(object):
         self.tail = nuevoNodo
         self.size += 1
 
-    # para insertar o mas bien agregar un nuevo nodo en un indice dao (Ojo no estamos eliminando, estamos agregando en una posicion de la lista)
+    # para insertar o mas bien agregar un nuevo nodo en un indice dado (Ojo no estamos eliminando, estamos agregando en una posicion de la lista)
     # Vamos iterando por los nodos con el valor de la longitud de la lista (0 hasta self.size) hasta llegar al nodo correspondiente al la indecima
     # iteracion, creamos el nodo con el valor a insertar y que apunte al nodo correspondiente del indice y tambien con ayuda de otra variable
     # que guarda el nodo anterior al nodo corresponidente del indice y hacemos que apunte al nuevo nodo.
@@ -60,7 +59,7 @@ class SinglyLinkedList(object):
     def __len__(self):
         return str(self.size)
 
-    # Para eliminar un nodo de la linked list (Realmente no lo estamos eliminand, estamos hancien que el nodo anterior del nodo que queremos
+    # Para eliminar un nodo de la linked list (Realmente no lo estamos eliminando, estamos hanciendo que el nodo anterior del nodo que queremos
     # eliminar apunte al nodo siguiente del nodo que queremos eliminar. asi la cadena o serie de nodos de la linked list nunca tendra un nodo
     # que lo referencie y por tanto sale de la serie.)
     def eliminar(self, valor_eliminar):
@@ -75,7 +74,7 @@ class SinglyLinkedList(object):
                 if current == self.tail:
                     self.tail = current.siguiente
 
-                #  Caso #2: uando cuando current de con el nodo a eliminar hacemos que el nodo anterior (previus) 
+                #  Caso #2: cuando el current de con el nodo a eliminar hacemos que el nodo anterior (previus) 
                 #  apunte al nodo siguiente de current y asi sacamos de la la serie de nodos el nodo a eliminar
                 else:
                     previus.siguiente = current.siguiente
@@ -91,7 +90,7 @@ class SinglyLinkedList(object):
         # Para el caso de que haya un solo elemnto en la linked list
         if current.siguiente == None:
             current = None
-        # para el caso de que la linked listo tenga mas de un elemento. la idea aca es ir iterante por cada nodo  hasta llegar al penultimo nodo
+        # para el caso de que la linked list tenga mas de un elemento. la idea aca es ir iterante por cada nodo  hasta llegar al penultimo nodo
         # de la linked list (o mas bien al nodo anterior del nodo que apunta hacia None) y luego hacer que ese penultimo nodo apunte hacia None
         # asi se 'saca' al ultimo nodo de la serie y queda el penultimo nodo como ultimo. 
         else:

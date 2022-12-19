@@ -1,5 +1,5 @@
 # Los queues o colas son colecciones que se basa fundamentalmente es FIFO (First-In-First-Out), que el primero en entrar es el primero en salir
-# existen unas variantes de las Queues y son la Priority Queues que se basa en FIFO pero con elementos de mayor/menort prioridad.
+# existen unas variantes de las Queues y son la Priority Queues que se basa en FIFO pero con elementos de mayor/menor prioridad.
 
 # Queue basado en listas.
 

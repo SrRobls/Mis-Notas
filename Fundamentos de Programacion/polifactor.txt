@@ -1,0 +1,16 @@
+A = int(input())
+division = A
+P = max(int(input()), 1)
+Q = max(int(input()), P)
+resta = (Q-P)+1 #diferencia entre Q y P. Esto nos sirve saber si A es polifactor, pues si A es divisible por los numeros
+            #que comprenden Q y P (la diferencia de estos dos), entonces A es polifactor. LE SUMAMOS 1 PORQUE P TAMBIEN ESTA INCLUIDO ENTRE ESOS NUMEROS
+cont = 0    #contador guardara la cantidad de veces que cada factor es divisible por i. este nos sirve para defirnir
+            # si A es polifactor o no
+for i in range(P, (Q+1)): #recorer numeros desde P a Q
+    if division % i == 0: #comprobamos si A es divisible por uno de los numeros i comprendidos entre Q y P
+        division /= i
+        cont += 1
+if cont == resta:
+    print(f'{A} es polifactor entre {P} y {Q}' )
+else:
+    print(f'{A} no es polifactor entre {P} y {Q}' )

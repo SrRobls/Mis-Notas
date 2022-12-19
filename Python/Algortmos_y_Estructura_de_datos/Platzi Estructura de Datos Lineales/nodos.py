@@ -73,12 +73,11 @@ print(head.siguiente.siguiente.siguiente.valor)
 print(head.siguiente.siguiente.siguiente.siguiente.valor)
 # 1
 
-while head.siguiente != None:
+while head:
     print(head.valor)
     head = head.siguiente
 # 5
 # 4
 # 3
 # 2
-# No imprimimos a 1 porque su valor de siguiente es None :(
-# Y asi se crea una serire de nodos.
+# 1

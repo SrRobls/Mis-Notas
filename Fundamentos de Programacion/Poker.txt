@@ -1,0 +1,75 @@
+#Color o escaleras
+#Procedemos a guardas los numeros de las cartas y los palos en una lista respectivamente
+manos = int(input())
+resultados = []
+def baraja():
+    valor = []
+    palo = []
+    for k in range(5):
+        valor.append(int(input()))
+        palo.append(input())
+    return valor, palo
+
+#caso Escalera Real:
+def cas1(valores, palos):
+    condicion1 = [14, 13, 12, 11, 10] #primera condicion
+    contador = 0 #Contador para comprobar que los palos son iguales
+    if sorted(valores, reverse=True) == condicion1: # comprobamos si los numeros organizados de mayor a menor son iguales a la condicion. Y si si es asi, procedemos a comprobar si los palos son iguales
+        for i in palos:
+            if i == palos[0]:
+                contador += 1
+        if contador == 5: #Si el contaodr es 5, significa que todos los palos son iguales, y esta baraja cumple con todas las condiciones
+            return True
+
+#Caso Escalera De Color:
+def cas2(valores, palos):
+    sucesion = [] #Donde guardaremos una lista con valores para comprobar que los numeros de las cartas si corresponde a la condicon de ser sucecivos (ej: 3, 4, 5, 6, 7, 8)
+    contador = 0 #Para comprobar que todos los palos son iguales
+    valores = sorted(valores)
+    for i in range(valores[0], valores[0] + 5): #Procedemos a guardar los valores en la lista sucesion
+        sucesion.append(i)
+    if valores == sucesion: #Comprobamos si la condicion de que sea sucecivo vumple y si cumple procedemos a verfificar que los palos son iguales
+        for k in palos:
+            if k == palos[0]:
+                contador += 1
+        if contador == 5: # Y los mismo, si es 5, entonces cumple con todos los requisistos
+            return True
+
+#Caso Color:
+def cas3(palos): #Para este es solo comprobar si losm palos son iguales, asi que usamos el metodo hecho anteriormente
+    contador = 0
+    for i in palos:
+        if i == palos[0]:
+            contador += 1
+    if contador == 5:
+        return True
+
+#Caso Escalera Normal:
+def cas4(valores): #Iguialmente ya habiamos aplicado este metodo anteriorermenta asi que lo replicamos
+    sucecion = []
+    valores = sorted(valores)
+    for i in range(valores[0], valores[0] + 5):
+        sucecion.append(i)
+    if  valores == sucecion:
+        return True
+
+#Para almacenar los resultado en una lista, y posteriormente moostrarlos por pantalla:
+for i in range(manos):
+    valor, palo = baraja()
+    if cas1(valor, palo) == True:
+        resultados.append('Escalera real')
+        pass
+    elif cas2(valor, palo) == True:
+        resultados.append('Escalera de color')
+        pass
+    elif cas3(palo) == True:
+        resultados.append('Color')
+        pass
+    elif cas4(valor) == True:
+        resultados.append('Escalera normal')
+        pass
+    else:
+        resultados.append('Otra mano')
+
+for i in resultados:
+    print(i)

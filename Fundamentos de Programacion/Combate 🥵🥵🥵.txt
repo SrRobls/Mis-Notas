@@ -1,0 +1,25 @@
+totalSolados = min(max(int(input()), 1), 1000) #Total soldados esta comprendido entre 1 y 1000
+soldadosA = []
+soldadosB = []
+#Recoleccion estatura soldadosA:
+for i in range(totalSolados):
+    estatura = int(input())
+    soldadosA.append(estatura)
+soldadosA.sort() #organizamos de menor a mayor estatura
+#Recoleccion estatura  soladosB:
+for i in range(totalSolados):
+    estatura = int(input())
+    soldadosB.append(estatura)
+soldadosB.sort(reverse=True) #organizamos de mayor a menor estatura
+#asi de esta forma, los soldadosA organizado de menor a mayor se enfrentaran a los soldadosB de mayor a menor
+#Asi simulamos que se disparan diagonalmente
+sobrevivientes = 0
+#combate/plomacera 🥵:
+for i in range(0, totalSolados):
+    if soldadosA[i] % 2 == 0 and soldadosB[i] % 2 == 0:
+        continue
+    elif soldadosA[i] % 2 != 0 and soldadosB[i] % 2 != 0:
+        continue
+    else:
+        sobrevivientes += 2
+print(f'Sobreviven {sobrevivientes} soldados' )

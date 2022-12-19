@@ -1,0 +1,12 @@
+<!-- Para indicar que este html hereda de un html padre, usamos extends -->
+{% extends "Padre.html" %}
+
+<!-- Ahora le difinimos el contenido -->
+
+{% block title %} HIJA UNO {% endblock %}
+
+{% block content %}
+    <h3>Estas en la hija 1, Bienvenido!</h3>
+    <p>Este es el video de donde estoy aprenidendo esto, de hecho, estoy Aprendiendo Django con esto!</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/d1-UX6aR_TM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{% endblock %}

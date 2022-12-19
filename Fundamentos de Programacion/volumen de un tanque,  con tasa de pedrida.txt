@@ -1,0 +1,7 @@
+from math import pi #llamamos a pi del la libreria math
+r = float(input()) #radio
+h = float(input()) #altura
+v = float(input()) #volumen/minuto
+m = float(input()) #minutos
+volumen = (pi*r**2*h) - (v*m)
+print(max(round(volumen, 3), 0)) #redondeamos a tres cifras decimales

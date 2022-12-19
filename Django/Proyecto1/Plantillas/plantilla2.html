@@ -1,0 +1,26 @@
+<html>
+    <style>
+        body{
+            background-color: beige;
+        }
+
+        h2{
+            color: blue;
+        }
+    </style>
+    <body>
+        <h2>Estas en una plantilla que trabaja con parametros {{nombre}} {{apellido}}<br>
+        y la fehca de hoy es: {{fecha.day}}-{{fecha.month}}-{{fecha.year}}</h2>
+        <h3>Los temas a ver son:</h3>
+        {% if temas%}
+            <ul>
+                {% for elTema in temas %}
+                    <li>{{elTema}}</li>
+                {% endfor  %}
+            </ul>
+            {% else %}
+                <p>No hay temas que mostrar</p>
+        {% endif%}
+        
+    </body>
+</html>

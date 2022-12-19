@@ -1,4 +1,4 @@
-# creeemos nuiestra clase Array
+# creeemos nuestra clase Array
 
 class Array(object):
 

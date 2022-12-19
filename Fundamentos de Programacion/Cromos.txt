@@ -1,0 +1,18 @@
+totalCromos = 0 #contador, pues se necesita no mas de 100000 cromos
+cromos = [] #donde iran los numeros de los cromos
+while True: #recoleccion de los cromos que se guardaran en la lista cromos
+    cromoNum = int(input())
+    totalCromos += 1
+    if totalCromos <= 100000 and cromoNum != 0:
+        cromos.append(cromoNum)
+    elif cromoNum == 0: #En el caso de que un cromo sea 0, se saldra del bucle, pues es nuestro indicio de parar la recoleccion
+        break
+cromos.sort() #organizamos la lista, hacemos esto para el proceso de hallar la respuesta
+diferentes = 0 #mostrara la cntidad de cromos diferentes
+repetido = 0 #en el caso de que el cromo ya haya aparecido en la lista cromos, no se tendra en cuenta
+# proceso para mostrar los cromos diferentes
+for i in range(len(cromos)):
+    if cromos[i] in cromos and cromos[i] != repetido:
+        repetido = cromos[i]
+        diferentes += 1
+print(diferentes)

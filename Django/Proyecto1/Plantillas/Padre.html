@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Cada hijo o subplantilla tiene un titulo diferente -->
+    <title>
+        {% block title %} 
+        <!-- En esta estructura ira codigo principal de cada hija, el cual el titulo sera diferentes
+        para cada hija -->
+        {% endblock %}
+    </title>
+    <style>
+        h1{
+            text-align: center;
+            background-color: aquamarine;
+            color: red;
+            margin-top: 0;
+        }
+
+        footer{
+            text-align: end;
+            background-color: blueviolet;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Estos codigos es del padre, asi que todas sus hijas los herederan -->
+    <h1>Aprendiendo sobre Hernncia de plantillas con Django!</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, placeat sit fuga quae consequatur ex reiciendis maxime. Magnam, laboriosam numquam corrupti consectetur maxime similique quaerat repellendus molestias ipsam itaque cum?</p>
+    {% block content %} 
+    <!-- Este es otro codigo cambiante, aqui ira el contenido segun las hija -->
+    {% endblock %}
+    <footer>
+        <h2>Este es el footer de la plantilla padre, asi que sus hijas heredan esto!.</h2>
+    </footer>
+</body>
+</html>

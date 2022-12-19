@@ -3,6 +3,9 @@ Ejercicios de las reinas. hallar la cantidad de formas diferentes de las posicio
 en un tablero nxn
 '''
 
+import re
+
+
 class Array(object):
     def __init__(self, size) -> None:
         self.items = []
@@ -18,23 +21,24 @@ def reinas(n, array_uni_dimensional, i = 0):
         print(array_uni_dimensional)
     else:
         for k in range(n):
-            if comprobarColumnas(array_uni_dimensional, k) and comprobarDiagonales( array_uni_dimensional, i, k):
+            if comprobarFilas(array_uni_dimensional, k) and comprobarDiagonales( array_uni_dimensional, i, k):
                 array_uni_dimensional[i] = k
                 reinas(n, array_uni_dimensional, i+1)
         array_uni_dimensional[i] = None
 
-def comprobarColumnas(array, k):
+def comprobarFilas(array, k):
     if k in array:
         return False
     else:
         return True
 
+
 def comprobarDiagonales(array, i,  k):
     iter = 0
     while array[iter] != None:
-        diferencia_ind = abs(i - iter)
-        diferencia_valor = abs(k - array[iter])
-        if diferencia_ind == diferencia_valor:
+        diferencia_columna = abs(i - iter)
+        diferencia_fila = abs(k - array[iter])
+        if diferencia_columna == diferencia_fila:
             return False
         iter += 1
     return True

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Usted esta buscando el articulo {{consulta}}</p>
+    <!-- En caso de que si haya resultads entonces los mostramos -->
+    {% if articulos %}
+        <ul>
+        {% for articulo in articulos %}
+            <li>
+                {{articulo.Nombre}} &nbsp; {{articulo.Seccion}} &nbsp; {{articulo.Precio}}
+                <!-- Los   &nbsp; son saltos de linea-->
+            </li>
+        {% endfor %}
+        </ul>
+        <!-- Si no, le indicamos -->
+        {% else %}
+            <p>El articulo {{consulta}} no existe</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,13 @@
+archvo = open('797.txt', 'r')
+correosEducativos = []
+for renglon in archvo:
+    palabras = renglon.split()
+    for palabra in palabras:
+        if '@' in palabra:
+            indice = palabra.find('.')
+            if palabra[indice+1:indice+4] == 'edu':
+                correosEducativos.append(palabra)
+
+print(len(correosEducativos))
+print(correosEducativos)
+archvo.close()
